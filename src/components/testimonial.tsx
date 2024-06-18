@@ -7,7 +7,6 @@ import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 
 type PropType = {
-  slides: number[]
   options?: EmblaOptionsType
 }
 
@@ -38,7 +37,7 @@ const testimonial_data: TestimonialDataItem[] = [
 ]
 
 const EmblaCarousel: React.FC<PropType> = props => {
-  const { slides, options } = props
+  const { options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {

@@ -12,8 +12,6 @@ import { EmblaOptionsType } from 'embla-carousel'
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
 
 const testimonial_options: EmblaOptionsType = { align: 'start', loop: true }
-const SLIDE_COUNT = 5
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 export default function Home() {
   useEffect(() => {
@@ -76,7 +74,7 @@ export default function Home() {
             excellence.
           </p>
           <p>Here are some nice things my clients have said about me:</p>
-          <Testimonial slides={SLIDES} options={testimonial_options} />
+          <Testimonial options={testimonial_options} />
         </article>
         <article
           id='extra'
