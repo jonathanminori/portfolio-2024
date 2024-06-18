@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
+    "embla-carousel-autoplay": "^8.1.5",
     "gsap": "npm:@gsap/shockingly@^3.12.5",
     "lucide-react": "^0.395.0",
     "next": "14.2.4",
@@ -20,6 +22,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "embla-carousel-react": "^8.1.5",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",
