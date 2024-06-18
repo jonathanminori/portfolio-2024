@@ -70,10 +70,10 @@ html {
 }
 
 .embla {
-  @apply sm:w-168 mt-12 overflow-hidden sm:-translate-x-8;
+  @apply mt-12 overflow-hidden;
 }
 .embla__viewport {
-  @apply overflow-hidden rounded-md border border-neutral-200 bg-neutral-200 dark:border-neutral-800 dark:bg-neutral-800;
+  @apply overflow-hidden rounded-md bg-neutral-50 dark:bg-neutral-900;
 }
 .embla__container {
   @apply flex;
@@ -81,7 +81,7 @@ html {
   touch-action: pan-y pinch-zoom;
 }
 .embla__slide {
-  @apply mr-[1px] flex w-full min-w-0 flex-none select-none flex-col justify-between bg-white py-2 pl-8 pr-16 dark:bg-neutral-950;
+  @apply flex w-full min-w-0 flex-none select-none flex-col justify-between px-12 py-2 text-center;
 }
 
 .embla__controls {

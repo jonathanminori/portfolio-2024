@@ -47,7 +47,7 @@ export default function Home() {
           className='mb-24 text-neutral-950 dark:text-neutral-200'
         >
           <h2 className='info-headline sr-only'>Bio</h2>
-          <p>
+          <p className='text-balance'>
             A hands-on design leader and startup founder with two decades of
             experience driving innovation and creative excellence.
           </p>
@@ -63,17 +63,16 @@ export default function Home() {
         >
           <h2 className='info-headline'>Currently</h2>
           <p>
-            I work as a fractional design leader with startups and Fortune 100
-            companies across fintech, blockchain, creative tools, and climate.
-            My speciality is in product design, strategy, and creative
-            leadership.
+            In my independent practice, I serve as a fractional design leader
+            for startups and Fortune 100 companies in fintech, blockchain,
+            creative tools, and climate sectors. My expertise lies in product
+            design, strategy, and creative leadership.
           </p>
           <p>
-            I look for opportunities where I can help deliver exceptional
-            product experiences and foster a culture of innovation and
-            excellence.
+            I seek opportunities where I can contribute to delivering
+            outstanding product experiences and cultivating a culture of
+            innovation and excellence.
           </p>
-          <p>Here are some nice things my clients have said about me:</p>
           <Testimonial options={testimonial_options} />
         </article>
         <article
@@ -144,7 +143,7 @@ export default function Home() {
             </a>
             <div
               id='secret'
-              className='flex h-full w-full select-none items-center justify-center rounded-xl bg-neutral-200/10 text-sm text-neutral-400 dark:bg-neutral-700/10 dark:text-neutral-500'
+              className='flex h-full w-full select-none items-center justify-center rounded-xl bg-neutral-50 text-sm text-neutral-400 dark:bg-neutral-900 dark:text-neutral-500'
             >
               Coming Soon
             </div>
