@@ -1,3 +1,108 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('/fonts/PPNeueMontreal-Thin.woff2');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('/fonts/PPNeueMontreal-Light.woff2');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('/fonts/PPNeueMontreal-Book.woff2');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('/fonts/PPNeueMontreal-Regular.woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('/fonts/PPNeueMontreal-Medium.woff2');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('/fonts/PPNeueMontreal-SemiBold.woff2');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('/fonts/PPNeueMontreal-Bold.woff2');
+  font-weight: 700;
+}
+
+body,
+html {
+  @apply bg-white antialiased selection:bg-fuchsia-100 selection:text-fuchsia-900 dark:bg-neutral-950 dark:selection:bg-fuchsia-950 dark:selection:text-fuchsia-200;
+}
+
+.container {
+  @apply !overflow-visible;
+}
+
+.info-headline {
+  @apply mb-4 text-sm font-medium text-fuchsia-600 dark:text-fuchsia-500;
+}
+
+.contact-list {
+  @apply m-0 border-b border-black/5 p-0 dark:border-white/10;
+}
+
+.contact-label {
+  @apply flex items-center justify-between px-0 py-2 text-neutral-950 no-underline dark:text-neutral-200;
+}
+
+.contact-icon {
+  @apply stroke-current text-neutral-300 transition-colors duration-500 ease-in-out group-hover:text-neutral-950 dark:text-neutral-700 dark:group-hover:text-neutral-200;
+}
+
+.embla {
+  @apply sm:w-168 mt-12 overflow-hidden sm:-translate-x-8;
+}
+.embla__viewport {
+  @apply overflow-hidden rounded-md border border-neutral-200 bg-neutral-200 dark:border-neutral-800 dark:bg-neutral-800;
+}
+.embla__container {
+  @apply flex;
+  backface-visibility: hidden;
+  touch-action: pan-y pinch-zoom;
+}
+.embla__slide {
+  @apply mr-[1px] flex w-full min-w-0 flex-none select-none flex-col justify-between bg-white py-2 pl-8 pr-16 dark:bg-neutral-950;
+}
+
+.embla__controls {
+  @apply mt-3 flex items-center justify-center;
+}
+.embla__dots {
+  @apply flex items-center justify-end;
+}
+.embla__dot {
+  @apply m-0 flex h-4 w-4 cursor-pointer items-center justify-center rounded-full border-none bg-red-50 bg-transparent p-0 no-underline;
+}
+.embla__dot:after {
+  @apply flex h-1.5 w-1.5 items-center rounded-full bg-neutral-700 ring-2 ring-transparent hover:ring-neutral-200;
+  content: '';
+}
+.embla__dot--selected:after {
+  @apply flex h-1 w-1 items-center rounded-full bg-transparent ring-2 ring-neutral-700;
+}
+
+.matrix {
+  @apply bg-white dark:bg-neutral-950;
+  background-image: url('../../public/img/transparent.svg');
+  background-size: 20px;
+}
