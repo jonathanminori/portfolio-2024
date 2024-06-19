@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import NavItem from '@/components/nav-item'
 import { Moon, SunMedium } from 'lucide-react'
+import Sticky from '@/components/sticky'
 
 export default function Header() {
   const [darkMode, setDarkMode] = useState(false)
@@ -37,12 +38,16 @@ export default function Header() {
     <header className='fixed right-0 top-0 z-30 px-8 py-4'>
       <nav>
         <ul className='flex space-x-8'>
-          <li>
-            <NavItem href='/' label='Profile' />
-          </li>
-          <li>
-            <NavItem href='/works' label='Works' />
-          </li>
+          <Sticky>
+            <li>
+              <NavItem href='/' label='Profile' />
+            </li>
+          </Sticky>
+          <Sticky>
+            <li>
+              <NavItem href='/works' label='Works' />
+            </li>
+          </Sticky>
           <li className='mt-[2px]'>
             <button
               onClick={() => toggleDarkMode()}

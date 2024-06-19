@@ -277,11 +277,45 @@ export default function Home() {
             className='-translate-x-[4px] opacity-50'
           />
           <p className='leading-relaxed'>
-            Hand coded with a little help from ChatGPT
+            Hand coded with a little help from{' '}
+            <a
+              href='https://chatgpt.com/'
+              title='Had a little help from my friend ChatGPT 4o'
+              className='colophon-link'
+              target='_blank'
+            >
+              ChatGPT
+            </a>{' '}
+            and{' '}
+            <a
+              href='https://blog.olivierlarose.com/'
+              title="Check out Oli's tutorials"
+              className='colophon-link'
+              target='_blank'
+            >
+              Olivier Larose
+            </a>
             <br />
-            Type by Neue Montreal by Pangram Pangram
+            Type by{' '}
+            <a
+              href='https://pangrampangram.com/products/neue-montreal'
+              title='Neue Montreal by Pangram Pangram Foundry'
+              className='colophon-link'
+              target='_blank'
+            >
+              Neue Montreal
+            </a>{' '}
+            by Pangram Pangram Foundry
             <br />
-            Icons by Lucide
+            Icons by{' '}
+            <a
+              href='https://lucide.dev/icons/'
+              title='Icons by Lucide'
+              className='colophon-link'
+              target='_blank'
+            >
+              Lucide
+            </a>
           </p>
         </article>
       </div>

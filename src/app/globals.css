@@ -114,9 +114,15 @@ html {
 .skill-a {
   @apply group-hover:bg-[#F8E6D0] group-hover:text-[#2A1D0C] dark:bg-neutral-800 dark:group-hover:bg-[#2A1D0C] dark:group-hover:text-[#F8E6D0];
 }
+
 .skill-b {
   @apply group-hover:bg-[#D3E0E3] group-hover:text-[#101F22] dark:bg-neutral-800 dark:group-hover:bg-[#101F22] dark:group-hover:text-[#D3E0E3];
 }
+
 .skill-c {
   @apply group-hover:bg-[#E6D2DC] group-hover:text-[#1D0E16] dark:bg-neutral-800 dark:group-hover:bg-[#1D0E16] dark:group-hover:text-[#E6D2DC];
+}
+
+.colophon-link {
+  @apply text-neutral-600 no-underline transition-colors duration-200 ease-in-out hover:text-neutral-950;
 }
