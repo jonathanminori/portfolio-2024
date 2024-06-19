@@ -85,7 +85,7 @@ html {
 }
 
 .embla__controls {
-  @apply mt-3 flex items-center justify-center;
+  @apply mt-2 flex items-center justify-center;
 }
 .embla__dots {
   @apply flex items-center justify-end;

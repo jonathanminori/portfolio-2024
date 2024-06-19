@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import Image from 'next/image'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -8,6 +9,7 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { ArrowUpRight, Minus } from 'lucide-react'
 import Testimonial from '@/components/testimonial'
 import { EmblaOptionsType } from 'embla-carousel'
+import ExtraPickleThumb from '../../public/img/extra-picklethumb.png'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
 
@@ -69,18 +71,29 @@ export default function Home() {
             design, strategy, and creative leadership.
           </p>
           <p>
-            I seek opportunities where I can contribute to delivering
+            I seek out opportunities where I can contribute to delivering
             outstanding product experiences and cultivating a culture of
             innovation and excellence.
           </p>
           <Testimonial options={testimonial_options} />
         </article>
         <article
+          id='core'
+          className='mb-24 text-neutral-950 dark:text-neutral-200'
+        >
+          <h2 className='info-headline'>Core Skills</h2>
+          <p>
+            Product Strategy, Brand Strategy, User Research, Product Design,
+            Prototyping, Creative Direction, Design Systems, Creative
+            Leadership, Talent Development
+          </p>
+        </article>
+        <article
           id='extra'
           className='mb-24 text-neutral-950 dark:text-neutral-200'
         >
           <h2 className='info-headline'>Extracurriculars</h2>
-          <div className='grid grid-cols-1 gap-2 sm:grid-cols-2'>
+          <div className='grid grid-cols-1 gap-1 sm:grid-cols-2'>
             <a
               href='https://adplist.org/mentors/jonathan-minori'
               title='View my ADPList profile'
@@ -130,12 +143,20 @@ export default function Home() {
                 id='pickle-thumbs'
                 className='flex w-full flex-col justify-between rounded-xl bg-[#08A24B]'
               >
-                <div className='aspect-4/3 w-full'></div>
+                <div className='flex h-64 items-center justify-center overflow-hidden'>
+                  <Image
+                    src={ExtraPickleThumb}
+                    placeholder='blur'
+                    width={312 / 2}
+                    height={430 / 2}
+                    alt='Pickle Thumbs'
+                  />
+                </div>
                 <div className='px-8 pb-3'>
-                  <h3 className='mb-1.5 text-xl font-medium text-neutral-100'>
+                  <h3 className='mb-1.5 text-xl font-medium text-white'>
                     Pickle Thumbs
                   </h3>
-                  <p className='text-base leading-snug text-neutral-100 opacity-80'>
+                  <p className='text-base leading-snug text-white opacity-80'>
                     Making things to help gardeners find their green thumb.
                   </p>
                 </div>
@@ -150,21 +171,10 @@ export default function Home() {
           </div>
         </article>
         <article
-          id='core'
+          id='recognition'
           className='mb-24 text-neutral-950 dark:text-neutral-200'
         >
-          <h2 className='info-headline'>Core Skills</h2>
-          <p>
-            Product Design, Product Strategy, Prototyping, Creative Direction,
-            User Research, Design Systems, Creative Leadership, Talent
-            Development
-          </p>
-        </article>
-        <article
-          id='recognized'
-          className='mb-24 text-neutral-950 dark:text-neutral-200'
-        >
-          <h2 className='info-headline'>Recognized</h2>
+          <h2 className='info-headline'>Recognition</h2>
           <p>
             Cannes Cyber Lion, Fast Co. Design, Wired, SXSW, One Show,
             Communication Arts, Webby, IxDA, and multiple FWA Awards
