@@ -68,7 +68,7 @@ export default function Home() {
           className='relative mb-20 text-neutral-950 dark:text-neutral-200'
         >
           <h2 className='info-headline'>Currently</h2>
-          <p>
+          {/* <p>
             In my independent practice, I serve as a fractional design leader
             for startups and Fortune 100 companies in fintech, blockchain,
             creative tools, and climate sectors. My expertise lies in product
@@ -78,8 +78,15 @@ export default function Home() {
             I seek out opportunities where I can contribute to delivering
             outstanding product experiences and cultivating a culture of
             innovation and excellence.
+          </p> */}
+          <p className='text-pretty'>
+            In my independent design practice, I help organizations launch
+            products, build creative teams, and mentor designers. I seek
+            opportunities to deliver exceptional products and foster a culture
+            of innovation and excellence.
           </p>
-          <TestimonialsBadge />
+          <p>Let’s build something extraordinary together. </p>
+          {/* <TestimonialsBadge /> */}
         </article>
         <article
           id='core'

@@ -74,7 +74,7 @@ export default function Works() {
         <Image
           src={floating2}
           alt='image'
-          width={300}
+          width={220}
           className='absolute left-[5%] top-[65%]'
         />
         <Image
@@ -104,14 +104,11 @@ export default function Works() {
           className='absolute left-[60%] top-[60%]'
         />
       </div>
-      <div
-        ref={plane3}
-        className='absolute h-full w-full blur-md brightness-50'
-      >
+      <div ref={plane3} className='absolute h-full w-full brightness-50'>
         <Image
           src={floating3}
           alt='image'
-          width={150}
+          width={220}
           className='absolute left-[65%] top-[2.5%]'
         />
         <Image
