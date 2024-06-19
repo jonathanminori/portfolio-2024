@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 
 import './globals.css'
 import Header from './header'
-import OpenToWork from '@/components/opentowork'
 
 export const metadata: Metadata = {
   title: 'Jonathan Minori',
@@ -55,7 +54,6 @@ export default function Home({
     <html lang='en'>
       <body>
         <Header />
-        <OpenToWork />
         {children}
       </body>
     </html>

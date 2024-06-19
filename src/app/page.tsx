@@ -9,7 +9,9 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { ArrowUpRight, Minus } from 'lucide-react'
 import Testimonial from '@/components/testimonial'
 import { EmblaOptionsType } from 'embla-carousel'
+import OpenToWork from '@/components/opentowork'
 import ExtraPickleThumb from '../../public/img/extra-picklethumb.png'
+import ExtraPickleThumbBG from '../../public/img/extra-picklethumb-testbg.jpg'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
 
@@ -49,15 +51,15 @@ export default function Home() {
           className='mb-24 text-neutral-950 dark:text-neutral-200'
         >
           <h2 className='info-headline sr-only'>Bio</h2>
-          <p className='text-balance'>
-            A hands-on design leader and startup founder with two decades of
-            experience driving innovation and creative excellence.
+          <p className='text-balance text-3xl font-light leading-snug'>
+            I&apos;m a hands-on design leader and startup founder with two
+            decades of experience driving innovation and creative excellence.
           </p>
-          <p>
+          {/* <p>
             I&apos;ve held pivotal roles across design, product, engineering,
             and marketing, excelling at the intersection of brand and product
             experiences, particularly in the realm of emerging technologies.
-          </p>
+          </p> */}
         </article>
         <article
           id='curently'
@@ -92,12 +94,12 @@ export default function Home() {
           id='extra'
           className='mb-24 text-neutral-950 dark:text-neutral-200'
         >
-          <h2 className='info-headline'>Extracurriculars</h2>
+          <h2 className='info-headline !mb-5'>Extracurriculars</h2>
           <div className='grid grid-cols-1 gap-1 sm:grid-cols-2'>
             <a
               href='https://adplist.org/mentors/jonathan-minori'
               title='View my ADPList profile'
-              className='no-underline'
+              className='no-underline transition-all duration-500 ease-in-out hover:scale-105'
             >
               <div
                 id='able'
@@ -118,7 +120,7 @@ export default function Home() {
             <a
               href='http://www.ableworks.co'
               title='Able'
-              className='no-underline'
+              className='no-underline transition-all duration-500 ease-in-out hover:scale-105'
             >
               <div
                 id='able'
@@ -137,19 +139,28 @@ export default function Home() {
             <a
               href='http://www.picklethumbs.com'
               title='Pickle Thumbs'
-              className='no-underline'
+              className='no-underline transition-all duration-200 ease-in-out hover:scale-105'
             >
               <div
                 id='pickle-thumbs'
-                className='flex w-full flex-col justify-between rounded-xl bg-[#08A24B]'
+                className='flex h-96 w-full flex-col justify-between overflow-hidden rounded-xl bg-[#08A24B]'
               >
-                <div className='flex h-64 items-center justify-center overflow-hidden'>
+                <div className='aspect-4/3 relative overflow-hidden'>
                   <Image
                     src={ExtraPickleThumb}
                     placeholder='blur'
-                    width={312 / 2}
-                    height={430 / 2}
+                    width={450}
+                    height={400}
                     alt='Pickle Thumbs'
+                    className='relative z-30 mt-0 -translate-y-4'
+                  />
+                  <div className='absolute bottom-0 left-0 z-20 h-full w-full bg-gradient-to-t from-[#08A24B] to-[#08A24B]/0 to-40%'></div>
+                  <Image
+                    src={ExtraPickleThumbBG}
+                    placeholder='blur'
+                    fill
+                    alt='Pickle Thumbs BG'
+                    className='z-10 mt-0 object-cover opacity-40'
                   />
                 </div>
                 <div className='px-8 pb-3'>
@@ -176,8 +187,8 @@ export default function Home() {
         >
           <h2 className='info-headline'>Recognition</h2>
           <p>
-            Cannes Cyber Lion, Fast Co. Design, Wired, SXSW, One Show,
-            Communication Arts, Webby, IxDA, and multiple FWA Awards
+            My work has won notable industry awards, including One Show, Webby,
+            SXSW, and FWA.
           </p>
         </article>
         <article id='contact' className='mb-24'>
@@ -245,7 +256,8 @@ export default function Home() {
             </li>
           </ul>
         </article>
-        <article id='colophon' className='text-xs text-neutral-500'>
+        <article id='colophon' className='relative text-xs text-neutral-500'>
+          <OpenToWork />
           <h2 className='sr-only'>Colophon</h2>
           <Minus
             size={16}

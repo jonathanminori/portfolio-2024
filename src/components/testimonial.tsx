@@ -24,15 +24,15 @@ const testimonial_data: TestimonialDataItem[] = [
   },
   {
     quote:
-      "Jonathan aligned with us on product vision from day one, moving seamlessly between details and big-picture strategy. His experience and curiosity helped us avoid pitfalls, and his clear communication was invaluable. We're grateful to keep him close as we grow.",
-    name: 'Ellie Buckingham & Miri Buckland',
-    position: 'Co-founders at Landing'
-  },
-  {
-    quote:
       'No single designer has had a bigger, more profound impact on our businesses than Jonathan Minori. His collaborative spirit, creativity, and curiosity make him an exceptional and valuable team player.',
     name: 'Ryan Wines',
     position: 'Founder & CEO at Marmoset Music & Track Club'
+  },
+  {
+    quote:
+      "Jonathan aligned with us on product vision from day one, moving seamlessly between details and big-picture strategy. His experience and curiosity helped us avoid pitfalls, and his clear communication was invaluable. We're grateful to keep him close as we grow.",
+    name: 'Ellie Buckingham & Miri Buckland',
+    position: 'Co-founders at Landing'
   }
 ]
 

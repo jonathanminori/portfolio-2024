@@ -15,8 +15,8 @@ export default function OpenToWork() {
     // Animate #opentowork element
     tl.fromTo(
       opentoworkRef.current,
-      { y: 120 },
-      { y: 0, delay: 1, duration: 1, ease: 'back.out(3)' }
+      { scale: 0 },
+      { scale: 1, delay: 1, duration: 1, ease: 'back.out(3)' }
     )
 
     // Animate #otw-text element
@@ -27,20 +27,11 @@ export default function OpenToWork() {
       '-=2'
     )
   }, [])
-  //   useEffect(() => {
-  //     const gsap
-  //       .timeline()
-  //       .fromTo(
-  //         '#otw-text',
-  //         { attr: { startOffset: '130%' } },
-  //         { attr: { startOffset: '25%' }, duration: 4, ease: 'power3.inOut' }
-  //       )
-  //   }, [])
   return (
     <a
       ref={opentoworkRef}
       href='mailto:jonathan.minori@gmail.com'
-      className='fixed bottom-6 left-6 aspect-square w-24 overflow-hidden rounded-full bg-[#0000FF] dark:bg-neutral-200'
+      className='absolute right-0 aspect-square w-24 overflow-hidden rounded-full bg-[#3E1EFF] dark:bg-neutral-200'
     >
       <svg
         width='132'
@@ -58,7 +49,7 @@ export default function OpenToWork() {
         <text>
           <textPath
             ref={otwTextRef}
-            className='select-none text-xs font-semibold uppercase tracking-tighter text-[#DDEBF2] dark:text-[#0000FF]'
+            className='select-none text-xs font-semibold uppercase tracking-tighter text-[#DDEBF2] dark:text-neutral-950'
             href='#otw-path'
           >
             Open to Work

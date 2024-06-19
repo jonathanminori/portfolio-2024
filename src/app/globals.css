@@ -54,7 +54,7 @@ html {
 }
 
 .info-headline {
-  @apply mb-4 text-sm font-medium text-fuchsia-600 dark:text-fuchsia-500;
+  @apply mb-4 text-sm font-medium text-[#3E1EFF] dark:text-fuchsia-500;
 }
 
 .contact-list {
