@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 
 import './globals.css'
 import Header from './header'
+import Testimonials from '@/components/testimonials'
+import { EmblaOptionsType } from 'embla-carousel'
 
 export const metadata: Metadata = {
   title: 'Jonathan Minori',
@@ -45,6 +47,8 @@ export const metadata: Metadata = {
   }
 }
 
+const testimonial_options: EmblaOptionsType = { align: 'start', loop: true }
+
 export default function Home({
   children
 }: Readonly<{
@@ -53,6 +57,7 @@ export default function Home({
   return (
     <html lang='en'>
       <body>
+        {/* <Testimonials options={testimonial_options} /> */}
         <Header />
         {children}
       </body>

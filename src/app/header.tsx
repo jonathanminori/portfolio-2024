@@ -34,7 +34,7 @@ export default function Header() {
     setDarkMode(newDarkMode)
   }
   return (
-    <header className='fixed right-0 top-0 z-20 px-8 py-4'>
+    <header className='fixed right-0 top-0 z-30 px-8 py-4'>
       <nav>
         <ul className='flex space-x-8'>
           <li>

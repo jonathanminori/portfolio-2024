@@ -36,7 +36,7 @@ const testimonial_data: TestimonialDataItem[] = [
   }
 ]
 
-const EmblaCarousel: React.FC<PropType> = props => {
+const Testimonials: React.FC<PropType> = props => {
   const { options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
 
@@ -58,39 +58,41 @@ const EmblaCarousel: React.FC<PropType> = props => {
   )
 
   return (
-    <section className='embla'>
-      <div className='embla__viewport' ref={emblaRef}>
-        <div className='embla__container'>
-          {testimonial_data.map((item, index) => (
-            <div className='embla__slide' key={index}>
-              <p className='font-semibold'>&quot;{item.quote}&quot;</p>
-              <p className='text-base font-medium leading-snug opacity-80'>
-                {item.name}
-                <br />
-                <span className='text-sm font-normal'>{item.position}</span>
-              </p>
-            </div>
-          ))}
+    <section className='fixed left-0 top-0 z-30 flex h-full w-full items-center justify-center bg-neutral-100'>
+      <div className='embla sm:w-168'>
+        <div className='embla__viewport' ref={emblaRef}>
+          <div className='embla__container'>
+            {testimonial_data.map((item, index) => (
+              <div className='embla__slide' key={index}>
+                <p className='font-semibold'>&quot;{item.quote}&quot;</p>
+                <p className='text-base font-medium leading-snug opacity-80'>
+                  {item.name}
+                  <br />
+                  <span className='text-sm font-normal'>{item.position}</span>
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className='embla__controls'>
-        <div className='embla__dots'>
-          {scrollSnaps.map((_, index) => (
-            <DotButton
-              key={index}
-              onClick={() => onDotButtonClick(index)}
-              className={
-                index === selectedIndex
-                  ? 'embla__dot embla__dot--selected'
-                  : 'embla__dot'
-              }
-            />
-          ))}
+        <div className='embla__controls'>
+          <div className='embla__dots'>
+            {scrollSnaps.map((_, index) => (
+              <DotButton
+                key={index}
+                onClick={() => onDotButtonClick(index)}
+                className={
+                  index === selectedIndex
+                    ? 'embla__dot embla__dot--selected'
+                    : 'embla__dot'
+                }
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
   )
 }
 
-export default EmblaCarousel
+export default Testimonials

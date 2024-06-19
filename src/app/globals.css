@@ -54,7 +54,7 @@ html {
 }
 
 .info-headline {
-  @apply mb-4 text-sm font-medium text-[#3E1EFF] dark:text-fuchsia-500;
+  @apply mb-4 text-sm font-medium text-neutral-500 dark:text-yellow-100;
 }
 
 .contact-list {
@@ -102,7 +102,21 @@ html {
 }
 
 .matrix {
-  @apply bg-white dark:bg-neutral-950;
+  @apply bg-white bg-opacity-20 dark:bg-neutral-950;
   background-image: url('../../public/img/transparent.svg');
   background-size: 20px;
+}
+
+.skill {
+  @apply m-0 rounded-md bg-neutral-50 px-3 py-1 transition-colors duration-300 ease-in-out;
+}
+
+.skill-a {
+  @apply group-hover:bg-[#F8E6D0] group-hover:text-[#2A1D0C] dark:bg-neutral-800 dark:group-hover:bg-[#2A1D0C] dark:group-hover:text-[#F8E6D0];
+}
+.skill-b {
+  @apply group-hover:bg-[#D3E0E3] group-hover:text-[#101F22] dark:bg-neutral-800 dark:group-hover:bg-[#101F22] dark:group-hover:text-[#D3E0E3];
+}
+.skill-c {
+  @apply group-hover:bg-[#E6D2DC] group-hover:text-[#1D0E16] dark:bg-neutral-800 dark:group-hover:bg-[#1D0E16] dark:group-hover:text-[#E6D2DC];
 }

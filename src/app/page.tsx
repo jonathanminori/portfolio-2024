@@ -7,15 +7,12 @@ import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { ArrowUpRight, Minus } from 'lucide-react'
-import Testimonial from '@/components/testimonial'
-import { EmblaOptionsType } from 'embla-carousel'
-import OpenToWork from '@/components/opentowork'
+import TestimonialsBadge from '@/components/testimonials-badge'
+import AnimatedText from '@/components/animatedtext'
 import ExtraPickleThumb from '../../public/img/extra-picklethumb.png'
 import ExtraPickleThumbBG from '../../public/img/extra-picklethumb-testbg.jpg'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
-
-const testimonial_options: EmblaOptionsType = { align: 'start', loop: true }
 
 export default function Home() {
   useEffect(() => {
@@ -29,7 +26,7 @@ export default function Home() {
     })
   }, [])
   return (
-    <div id='wrapper' className='container z-0'>
+    <div id='wrapper' className='container z-10'>
       <div id='content' className='prose pb-48 pt-24 text-xl font-normal'>
         <article id='intro' className='mb-14 cursor-help'>
           <h1 className='group text-base font-medium text-neutral-950 dark:text-neutral-200'>
@@ -48,13 +45,18 @@ export default function Home() {
         </article>
         <article
           id='bio'
-          className='mb-24 text-neutral-950 dark:text-neutral-200'
+          className='mb-28 text-neutral-950 dark:text-neutral-200'
         >
           <h2 className='info-headline sr-only'>Bio</h2>
-          <p className='text-balance text-3xl font-light leading-snug'>
-            I&apos;m a hands-on design leader and startup founder with two
-            decades of experience driving innovation and creative excellence.
-          </p>
+          <AnimatedText
+            text="I'm a hands-on leader and startup founder with two decades of experience driving innovation and creative excellence."
+            startChar={80}
+            endChar={1200}
+          />
+          {/* <p className='text-3xl font-light leading-snug'>
+            I&apos;m a hands-on leader and startup founder with two decades of
+            experience driving innovation and creative excellence.
+          </p> */}
           {/* <p>
             I&apos;ve held pivotal roles across design, product, engineering,
             and marketing, excelling at the intersection of brand and product
@@ -63,7 +65,7 @@ export default function Home() {
         </article>
         <article
           id='curently'
-          className='mb-24 text-neutral-950 dark:text-neutral-200'
+          className='relative mb-20 text-neutral-950 dark:text-neutral-200'
         >
           <h2 className='info-headline'>Currently</h2>
           <p>
@@ -77,29 +79,36 @@ export default function Home() {
             outstanding product experiences and cultivating a culture of
             innovation and excellence.
           </p>
-          <Testimonial options={testimonial_options} />
+          <TestimonialsBadge />
         </article>
         <article
           id='core'
-          className='mb-24 text-neutral-950 dark:text-neutral-200'
+          className='w-168 group mb-20 -translate-x-8 p-8 text-neutral-950 dark:text-neutral-200'
         >
-          <h2 className='info-headline'>Core Skills</h2>
-          <p>
-            Product Strategy, Brand Strategy, User Research, Product Design,
-            Prototyping, Creative Direction, Design Systems, Creative
-            Leadership, Talent Development
-          </p>
+          <h2 className='info-headline mt-0'>Core Skills</h2>
+          <ul className='relative m-0 flex list-none flex-wrap items-baseline justify-start gap-1 p-0'>
+            <li className='skill skill-a'>Product Strategy</li>
+            <li className='skill skill-a'>Brand Strategy</li>
+            <li className='skill skill-a'>Creative Direction</li>
+            <li className='skill skill-a'>Art Direction</li>
+            <li className='skill skill-a'>User Research</li>
+            <li className='skill skill-b'>Product Design</li>
+            <li className='skill skill-b'>Prototyping</li>
+            <li className='skill skill-b'>Design Systems</li>
+            <li className='skill skill-c'>Creative Leadership</li>
+            <li className='skill skill-c'>Talent Development</li>
+          </ul>
         </article>
         <article
           id='extra'
-          className='mb-24 text-neutral-950 dark:text-neutral-200'
+          className='mb-28 text-neutral-950 dark:text-neutral-200'
         >
           <h2 className='info-headline !mb-5'>Extracurriculars</h2>
           <div className='grid grid-cols-1 gap-1 sm:grid-cols-2'>
             <a
               href='https://adplist.org/mentors/jonathan-minori'
               title='View my ADPList profile'
-              className='no-underline transition-all duration-500 ease-in-out hover:scale-105'
+              className='group no-underline'
             >
               <div
                 id='able'
@@ -120,7 +129,7 @@ export default function Home() {
             <a
               href='http://www.ableworks.co'
               title='Able'
-              className='no-underline transition-all duration-500 ease-in-out hover:scale-105'
+              className='group no-underline'
             >
               <div
                 id='able'
@@ -139,7 +148,7 @@ export default function Home() {
             <a
               href='http://www.picklethumbs.com'
               title='Pickle Thumbs'
-              className='no-underline transition-all duration-200 ease-in-out hover:scale-105'
+              className='group no-underline'
             >
               <div
                 id='pickle-thumbs'
@@ -152,7 +161,7 @@ export default function Home() {
                     width={450}
                     height={400}
                     alt='Pickle Thumbs'
-                    className='relative z-30 mt-0 -translate-y-4'
+                    className='relative z-30 mt-0 -translate-y-4 transition-all duration-300 ease-in-out group-hover:scale-110'
                   />
                   <div className='absolute bottom-0 left-0 z-20 h-full w-full bg-gradient-to-t from-[#08A24B] to-[#08A24B]/0 to-40%'></div>
                   <Image
@@ -176,14 +185,12 @@ export default function Home() {
             <div
               id='secret'
               className='flex h-full w-full select-none items-center justify-center rounded-xl bg-neutral-50 text-sm text-neutral-400 dark:bg-neutral-900 dark:text-neutral-500'
-            >
-              Coming Soon
-            </div>
+            ></div>
           </div>
         </article>
         <article
           id='recognition'
-          className='mb-24 text-neutral-950 dark:text-neutral-200'
+          className='mb-28 text-neutral-950 dark:text-neutral-200'
         >
           <h2 className='info-headline'>Recognition</h2>
           <p>
@@ -191,9 +198,12 @@ export default function Home() {
             SXSW, and FWA.
           </p>
         </article>
-        <article id='contact' className='mb-24'>
+        <article id='contact' className='mb-28'>
           <h2 className='info-headline'>Connect</h2>
-          <ul className='list-outside list-none p-0 font-sans'>
+          <p>
+            Currently available for both contract and full-time opportunities.
+          </p>
+          <ul className='list-outside list-none p-0'>
             <li className='contact-list'>
               <a
                 href='mailto:jonathan.minori@gmail.com'
@@ -209,13 +219,14 @@ export default function Home() {
                 />
               </a>
             </li>
+
             <li className='contact-list'>
               <a
-                href='https://read.cv/mino'
-                title='My CV'
+                href='https://www.linkedin.com/in/jonathanminori/'
+                title='Connect on LinkedIn'
                 className='contact-label group'
               >
-                CV
+                LinkedIn
                 <ArrowUpRight
                   size={16}
                   strokeWidth={1.25}
@@ -226,11 +237,11 @@ export default function Home() {
             </li>
             <li className='contact-list'>
               <a
-                href='https://www.linkedin.com/in/jonathanminori/'
-                title='Connect on LinkedIn'
+                href='https://read.cv/mino'
+                title='Read.cv'
                 className='contact-label group'
               >
-                LinkedIn
+                Read.cv
                 <ArrowUpRight
                   size={16}
                   strokeWidth={1.25}
@@ -257,7 +268,7 @@ export default function Home() {
           </ul>
         </article>
         <article id='colophon' className='relative text-xs text-neutral-500'>
-          <OpenToWork />
+          {/* <OpenToWork /> */}
           <h2 className='sr-only'>Colophon</h2>
           <Minus
             size={16}
