@@ -26,9 +26,9 @@ export default function Home() {
   }, [])
   return (
     <div id='wrapper' className='container z-10'>
-      <div id='content' className='prose pb-48 pt-24 text-lg font-normal'>
+      <div id='content' className='prose pb-48 pt-24 text-xl font-normal'>
         <article id='intro' className='mb-14 cursor-help'>
-          <h1 className='group text-base font-medium text-neutral-950 dark:text-neutral-200'>
+          <h1 className='group text-base font-normal text-neutral-950 dark:text-neutral-200'>
             <span className='delay-800 transition-opacity duration-[1600ms] ease-linear group-hover:opacity-10'>
               Jonathan{' '}
             </span>
@@ -92,7 +92,7 @@ export default function Home() {
           className='group mb-20 w-168 -translate-x-8 p-8 text-neutral-950 dark:text-neutral-200'
         >
           <h2 className='info-headline mt-0'>Core Skills</h2>
-          <ul className='relative m-0 flex list-none flex-wrap items-baseline justify-start gap-1 p-0'>
+          <ul className='relative m-0 flex list-none flex-wrap items-baseline justify-start gap-0.5 p-0'>
             <li className='skill skill-a'>Product Strategy</li>
             <li className='skill skill-a'>Brand Strategy</li>
             <li className='skill skill-a'>Creative Direction</li>
@@ -110,6 +110,7 @@ export default function Home() {
           className='mb-28 text-neutral-950 dark:text-neutral-200'
         >
           <h2 className='info-headline !mb-5'>Extracurriculars</h2>
+          <p>A few things I work on outside of my day job.</p>
           <div className='grid grid-cols-1 gap-1 sm:grid-cols-2'>
             <a
               href='https://adplist.org/mentors/jonathan-minori'
@@ -118,14 +119,14 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='flex w-full flex-col justify-between rounded-md bg-slate-900'
+                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-md bg-slate-900'
               >
-                <div className='aspect-4/3 w-full'></div>
-                <div className='px-8 pb-3'>
-                  <h3 className='readable mb-1.5 font-normal text-white'>
+                <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
+                <div className='z-10 bg-gradient-to-t from-slate-900/95 from-40% to-slate-900/0 px-6 pb-2 pt-12'>
+                  <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     ADPList
                   </h3>
-                  <p className='readable text-base leading-snug text-white/80'>
+                  <p className='readable text-base font-normal leading-snug text-white opacity-90 group-hover:opacity-100'>
                     1,000+ minutes mentoring designers on career moves.
                   </p>
                 </div>
@@ -138,12 +139,12 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='flex aspect-4/3 w-full flex-col justify-between rounded-md bg-[#FCFFDE]'
+                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-md bg-[#FCFFDE]'
               >
-                <div className='aspect-4/3 w-full'></div>
-                <div className='px-8 pb-3'>
-                  <h3 className='readable mb-1.5 font-normal'>Able</h3>
-                  <p className='readable text-base leading-snug opacity-80'>
+                <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
+                <div className='z-10 bg-gradient-to-t from-[#FCFFDE]/95 from-40% to-[#FCFFDE]/0 px-6 pb-2 pt-12'>
+                  <h3 className='readable mb-1.5 text-lg font-normal'>Able</h3>
+                  <p className='readable text-base font-normal leading-snug opacity-90 group-hover:opacity-100'>
                     AI-edited instructional videos for frontline teams.
                   </p>
                 </div>
@@ -167,10 +168,10 @@ export default function Home() {
                   className='z-0 mt-0 object-cover opacity-40 transition-transform duration-500 ease-in-out group-hover:scale-105'
                 /> */}
                 <div className='z-10 bg-gradient-to-t from-[#08A24B]/80 from-20% to-[#08A24B]/0 px-6 pb-2 pt-12'>
-                  <h3 className='readable mb-1.5 font-normal text-white'>
+                  <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     Pickle Thumbs
                   </h3>
-                  <p className='readable text-base leading-snug text-white/80'>
+                  <p className='readable text-base font-normal leading-snug text-white opacity-90 group-hover:opacity-100'>
                     Making things to help gardeners find their green thumb.
                   </p>
                 </div>
@@ -215,7 +216,7 @@ export default function Home() {
             </a> */}
             <div
               id='secret'
-              className='flex h-full w-full select-none items-center justify-center rounded-md bg-neutral-50 text-sm text-neutral-400 dark:bg-neutral-900 dark:text-neutral-500'
+              className='hidden h-full w-full select-none items-center justify-center rounded-md bg-neutral-50 text-sm text-neutral-400 dark:bg-neutral-900 dark:text-neutral-500 sm:flex'
             ></div>
           </div>
         </article>
@@ -225,8 +226,8 @@ export default function Home() {
         >
           <h2 className='info-headline'>Recognition</h2>
           <p>
-            My work has won notable industry awards, including One Show, Webby,
-            SXSW, and FWA.
+            My work has won notable industry awards, including Cannes, One Show,
+            Webby, SXSW, and FWA.
           </p>
         </article>
         <article id='contact' className='mb-28'>
