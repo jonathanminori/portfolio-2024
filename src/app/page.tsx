@@ -10,6 +10,7 @@ import { ArrowUpRight, Minus } from 'lucide-react'
 import TestimonialsBadge from '@/components/testimonials-badge'
 import AnimatedText from '@/components/animatedtext'
 import BackgroundVideo from '@/components/backgroundvideo'
+import Sticky from '@/components/sticky'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
 
@@ -93,16 +94,36 @@ export default function Home() {
         >
           <h2 className='info-headline mt-0'>Core Skills</h2>
           <ul className='relative m-0 flex list-none flex-wrap items-baseline justify-start gap-0.5 p-0'>
-            <li className='skill skill-a'>Product Strategy</li>
-            <li className='skill skill-a'>Brand Strategy</li>
-            <li className='skill skill-a'>Creative Direction</li>
-            <li className='skill skill-a'>Art Direction</li>
-            <li className='skill skill-a'>User Research</li>
-            <li className='skill skill-b'>Product Design</li>
-            <li className='skill skill-b'>Prototyping</li>
-            <li className='skill skill-b'>Design Systems</li>
-            <li className='skill skill-c'>Creative Leadership</li>
-            <li className='skill skill-c'>Talent Development</li>
+            <Sticky>
+              <li className='skill skill-a'>Product Strategy</li>
+            </Sticky>
+            <Sticky>
+              <li className='skill skill-a'>Brand Strategy</li>
+            </Sticky>
+            <Sticky>
+              <li className='skill skill-a'>Creative Direction</li>
+            </Sticky>
+            <Sticky>
+              <li className='skill skill-a'>Art Direction</li>
+            </Sticky>
+            <Sticky>
+              <li className='skill skill-a'>User Research</li>
+            </Sticky>
+            <Sticky>
+              <li className='skill skill-b'>Product Design</li>
+            </Sticky>
+            <Sticky>
+              <li className='skill skill-b'>Prototyping</li>
+            </Sticky>
+            <Sticky>
+              <li className='skill skill-b'>Design Systems</li>
+            </Sticky>
+            <Sticky>
+              <li className='skill skill-c'>Creative Leadership</li>
+            </Sticky>
+            <Sticky>
+              <li className='skill skill-c'>Talent Development</li>
+            </Sticky>
           </ul>
         </article>
         <article
@@ -214,10 +235,10 @@ export default function Home() {
                 </div>
               </div>
             </a> */}
-            <div
+            {/* <div
               id='secret'
               className='hidden h-full w-full select-none items-center justify-center rounded-md bg-neutral-50 text-sm text-neutral-400 dark:bg-neutral-900 dark:text-neutral-500 sm:flex'
-            ></div>
+            ></div> */}
           </div>
         </article>
         <article
