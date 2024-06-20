@@ -9,8 +9,7 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { ArrowUpRight, Minus } from 'lucide-react'
 import TestimonialsBadge from '@/components/testimonials-badge'
 import AnimatedText from '@/components/animatedtext'
-import ExtraPickleThumb from '../../public/img/extra-picklethumb.png'
-import ExtraPickleThumbBG from '../../public/img/extra-picklethumb-testbg.jpg'
+import BackgroundVideo from '@/components/backgroundvideo'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
 
@@ -27,7 +26,7 @@ export default function Home() {
   }, [])
   return (
     <div id='wrapper' className='container z-10'>
-      <div id='content' className='prose pb-48 pt-24 text-xl font-normal'>
+      <div id='content' className='prose pb-48 pt-24 text-lg font-normal'>
         <article id='intro' className='mb-14 cursor-help'>
           <h1 className='group text-base font-medium text-neutral-950 dark:text-neutral-200'>
             <span className='delay-800 transition-opacity duration-[1600ms] ease-linear group-hover:opacity-10'>
@@ -90,7 +89,7 @@ export default function Home() {
         </article>
         <article
           id='core'
-          className='w-168 group mb-20 -translate-x-8 p-8 text-neutral-950 dark:text-neutral-200'
+          className='group mb-20 w-168 -translate-x-8 p-8 text-neutral-950 dark:text-neutral-200'
         >
           <h2 className='info-headline mt-0'>Core Skills</h2>
           <ul className='relative m-0 flex list-none flex-wrap items-baseline justify-start gap-1 p-0'>
@@ -119,16 +118,15 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='flex w-full flex-col justify-between rounded-xl bg-slate-900'
+                className='flex w-full flex-col justify-between rounded-md bg-slate-900'
               >
                 <div className='aspect-4/3 w-full'></div>
                 <div className='px-8 pb-3'>
-                  <h3 className='mb-1.5 text-xl font-medium text-neutral-100'>
+                  <h3 className='readable mb-1.5 font-normal text-white'>
                     ADPList
                   </h3>
-                  <p className='text-base leading-snug text-neutral-100 opacity-80'>
-                    1,000+ minutes mentoring designers to land their next role
-                    or pursue a career in freelance.
+                  <p className='readable text-base leading-snug text-white/80'>
+                    1,000+ minutes mentoring designers on career moves.
                   </p>
                 </div>
               </div>
@@ -140,14 +138,13 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='aspect-4/3 flex w-full flex-col justify-between rounded-xl bg-[#FCFFDE]'
+                className='flex aspect-4/3 w-full flex-col justify-between rounded-md bg-[#FCFFDE]'
               >
                 <div className='aspect-4/3 w-full'></div>
                 <div className='px-8 pb-3'>
-                  <h3 className='mb-1.5 text-xl font-medium'>Able</h3>
-                  <p className='text-base leading-snug opacity-80'>
-                    Easily record and share AI-edited instructional videos with
-                    your frontline teams.
+                  <h3 className='readable mb-1.5 font-normal'>Able</h3>
+                  <p className='readable text-base leading-snug opacity-80'>
+                    AI-edited instructional videos for frontline teams.
                   </p>
                 </div>
               </div>
@@ -159,9 +156,36 @@ export default function Home() {
             >
               <div
                 id='pickle-thumbs'
-                className='flex h-96 w-full flex-col justify-between overflow-hidden rounded-xl bg-[#08A24B]'
+                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-md bg-[#08A24B]'
               >
-                <div className='aspect-4/3 relative overflow-hidden'>
+                <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
+                {/* <Image
+                  src={ExtraPickleThumbBG}
+                  placeholder='blur'
+                  fill
+                  alt='Pickle Thumbs BG'
+                  className='z-0 mt-0 object-cover opacity-40 transition-transform duration-500 ease-in-out group-hover:scale-105'
+                /> */}
+                <div className='z-10 bg-gradient-to-t from-[#08A24B]/80 from-20% to-[#08A24B]/0 px-6 pb-2 pt-12'>
+                  <h3 className='readable mb-1.5 font-normal text-white'>
+                    Pickle Thumbs
+                  </h3>
+                  <p className='readable text-base leading-snug text-white/80'>
+                    Making things to help gardeners find their green thumb.
+                  </p>
+                </div>
+              </div>
+            </a>
+            {/* <a
+              href='http://www.picklethumbs.com'
+              title='Pickle Thumbs'
+              className='group no-underline'
+            >
+              <div
+                id='pickle-thumbs'
+                className='flex h-96 w-full flex-col justify-between overflow-hidden rounded-md bg-[#08A24B]'
+              >
+                <div className='relative aspect-4/3 overflow-hidden'>
                   <Image
                     src={ExtraPickleThumb}
                     placeholder='blur'
@@ -180,18 +204,18 @@ export default function Home() {
                   />
                 </div>
                 <div className='px-8 pb-3'>
-                  <h3 className='mb-1.5 text-xl font-medium text-white'>
+                  <h3 className='mb-1.5  font-medium text-white'>
                     Pickle Thumbs
                   </h3>
-                  <p className='text-base leading-snug text-white opacity-80'>
+                  <p className=' leading-snug text-white opacity-80'>
                     Making things to help gardeners find their green thumb.
                   </p>
                 </div>
               </div>
-            </a>
+            </a> */}
             <div
               id='secret'
-              className='flex h-full w-full select-none items-center justify-center rounded-xl bg-neutral-50 text-sm text-neutral-400 dark:bg-neutral-900 dark:text-neutral-500'
+              className='flex h-full w-full select-none items-center justify-center rounded-md bg-neutral-50 text-sm text-neutral-400 dark:bg-neutral-900 dark:text-neutral-500'
             ></div>
           </div>
         </article>

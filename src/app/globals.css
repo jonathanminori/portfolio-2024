@@ -108,7 +108,7 @@ html {
 }
 
 .skill {
-  @apply m-0 rounded-md bg-neutral-50 px-3 py-1 transition-colors duration-300 ease-in-out;
+  @apply m-0 rounded-md bg-neutral-50 px-3 py-1 text-lg transition-colors duration-300 ease-in-out;
 }
 
 .skill-a {
@@ -125,4 +125,8 @@ html {
 
 .colophon-link {
   @apply text-neutral-600 no-underline transition-colors duration-200 ease-in-out hover:text-neutral-950;
+}
+
+.readable {
+  @apply drop-shadow-[0_0px_1px_rgba(0,0,0,0.1)];
 }
