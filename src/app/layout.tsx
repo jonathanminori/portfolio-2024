@@ -23,6 +23,13 @@ export const metadata: Metadata = {
   icons: {
     icon: 'img/favicon.svg'
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jonathan Minori',
+    description: 'Design Director based in Portland, Oregon',
+    creator: '@jonminori',
+    images: ['https://portfolio-2024-three-coral.vercel.app/img/twitter.jpg'] // Must be an absolute URL
+  },
   openGraph: {
     title: 'Jonathan Minori',
     description: 'Design Director based in Portland, Oregon',
