@@ -30,16 +30,22 @@ export const metadata: Metadata = {
     siteName: 'Jonathan Minori',
     images: [
       {
-        url: 'https://nextjs.org/og.png', // Must be an absolute URL
+        url: 'https://portfolio-2024-three-coral.vercel.app/img/opengraph-image-800x600.jpg', // Must be an absolute URL
         width: 800,
         height: 600,
-        alt: 'Jonathan Minori - Design leader from Portland, Oregon'
+        alt: 'Jonathan Minori - Design Director based in Portland, Oregon'
       },
       {
-        url: 'https://nextjs.org/og-alt.png', // Must be an absolute URL
+        url: 'https://portfolio-2024-three-coral.vercel.app/img/opengraph-image-1200x630.jpg', // Must be an absolute URL
+        width: 1200,
+        height: 630,
+        alt: 'Jonathan Minori - Design Director based in Portland, Oregon'
+      },
+      {
+        url: 'https://portfolio-2024-three-coral.vercel.app/img/opengraph-image-1800x1600.jpg', // Must be an absolute URL
         width: 1800,
         height: 1600,
-        alt: 'Jonathan Minori - Design leader from Portland, Oregon'
+        alt: 'Jonathan Minori - Design Director based in Portland, Oregon'
       }
     ],
     locale: 'en_US',
