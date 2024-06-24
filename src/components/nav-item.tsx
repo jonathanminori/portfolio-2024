@@ -21,7 +21,7 @@ export default function NavItem({
 
   return (
     <a
-      className='cursor-pointer text-sm font-medium text-neutral-950 dark:text-neutral-200'
+      className='cursor-pointer text-sm font-medium text-neutral-700 dark:text-neutral-200'
       onClick={handleClick}
     >
       {label}

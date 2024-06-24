@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
@@ -15,6 +15,40 @@ import Sticky from '@/components/sticky'
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
 
 export default function Home() {
+  const line1Ref = useRef<HTMLDivElement>(null)
+  const line2Ref = useRef<HTMLDivElement>(null)
+  const tl = useRef(gsap.timeline({ paused: true }))
+
+  useEffect(() => {
+    gsap.set(line1Ref.current, { y: 0, autoAlpha: 1 })
+    gsap.set(line2Ref.current!.children, { y: 20, autoAlpha: 0 })
+
+    // Define the timeline for animation
+    tl.current
+      .to(line1Ref.current, { y: -20, autoAlpha: 0, duration: 0.5 }, 0)
+      .to(
+        line2Ref.current!.children,
+        { y: 0, autoAlpha: 1, stagger: 0.05, duration: 0.5 },
+        0
+      )
+  }, [])
+
+  const handleMouseOver = () => {
+    tl.current.play()
+  }
+
+  const handleMouseOut = () => {
+    tl.current.reverse()
+  }
+
+  const textToSpans = (text: string) => {
+    return text.split('').map((char, index) => (
+      <span key={index} className='inline-block whitespace-pre'>
+        {char}
+      </span>
+    ))
+  }
+
   useEffect(() => {
     ScrollSmoother.create({
       wrapper: '#wrapper',
@@ -25,11 +59,36 @@ export default function Home() {
       ignoreMobileResize: true
     })
   }, [])
+
   return (
     <div id='wrapper' className='container z-10'>
       <div id='content' className='prose pb-48 pt-24 text-xl font-normal'>
         <article id='intro' className='mb-14 cursor-help'>
-          <h1 className='group text-base font-normal text-neutral-950 dark:text-neutral-200'>
+          <div
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            className='cursor-default'
+          >
+            <div className='relative mb-1 h-5 overflow-hidden'>
+              <h1
+                ref={line1Ref}
+                className='absolute z-10 text-base font-medium leading-tight text-neutral-950 dark:text-neutral-200'
+              >
+                <span className='inline-block'>Jonathan Minori</span>
+              </h1>
+              <h1
+                ref={line2Ref}
+                className='relative z-0 text-base font-medium leading-tight text-neutral-950 dark:text-neutral-200'
+              >
+                {textToSpans('mino')}
+              </h1>
+            </div>
+            <h2 className='mt-0 text-sm font-normal text-neutral-950 opacity-60 dark:text-neutral-200'>
+              Design Director based in Portland, Oregon
+            </h2>
+          </div>
+
+          {/* <h1 className='group text-base font-normal text-neutral-950 dark:text-neutral-200'>
             <span className='delay-800 transition-opacity duration-[1600ms] ease-linear group-hover:opacity-10'>
               Jonathan{' '}
             </span>
@@ -38,16 +97,13 @@ export default function Home() {
               ri
             </span>
             <br />
-            <span className='text-sm font-normal opacity-60'>
-              Design Director based in Portland, Oregon
-            </span>
-          </h1>
+          </h1> */}
         </article>
         <article
           id='bio'
           className='mb-28 text-neutral-950 dark:text-neutral-200'
         >
-          <h2 className='info-headline sr-only'>Bio</h2>
+          <h3 className='info-headline sr-only'>Bio</h3>
           <AnimatedText
             text="I'm a hands-on leader and startup founder with two decades of experience driving innovation and creative excellence."
             startChar={80}
@@ -67,7 +123,7 @@ export default function Home() {
           id='curently'
           className='relative mb-20 text-neutral-950 dark:text-neutral-200'
         >
-          <h2 className='info-headline'>Currently</h2>
+          <h3 className='info-headline'>Currently</h3>
           {/* <p>
             In my independent practice, I serve as a fractional design leader
             for startups and Fortune 100 companies in fintech, blockchain,
@@ -92,7 +148,7 @@ export default function Home() {
           id='core'
           className='group mb-20 w-168 -translate-x-8 p-8 text-neutral-950 dark:text-neutral-200'
         >
-          <h2 className='info-headline mt-0'>Core Skills</h2>
+          <h3 className='info-headline mt-0'>Core Skills</h3>
           <ul className='relative m-0 flex list-none flex-wrap items-baseline justify-start gap-0.5 p-0'>
             <Sticky>
               <li className='skill skill-a'>Product Strategy</li>
@@ -130,7 +186,7 @@ export default function Home() {
           id='extra'
           className='mb-28 text-neutral-950 dark:text-neutral-200'
         >
-          <h2 className='info-headline !mb-5'>Extracurriculars</h2>
+          <h3 className='info-headline !mb-5'>Extracurriculars</h3>
           <p>A few things I work on outside of my day job.</p>
           <div className='grid grid-cols-1 gap-1 sm:grid-cols-2'>
             <a
@@ -265,14 +321,14 @@ export default function Home() {
           id='recognition'
           className='mb-28 text-neutral-950 dark:text-neutral-200'
         >
-          <h2 className='info-headline'>Recognition</h2>
+          <h3 className='info-headline'>Recognition</h3>
           <p>
             My work has won notable industry awards, including Cannes, One Show,
             Webby, SXSW, and FWA.
           </p>
         </article>
         <article id='contact' className='mb-28'>
-          <h2 className='info-headline'>Connect</h2>
+          <h3 className='info-headline'>Connect</h3>
           <p>
             Currently available for both contract and full-time opportunities.
           </p>
@@ -342,7 +398,7 @@ export default function Home() {
         </article>
         <article id='colophon' className='relative text-xs text-neutral-500'>
           {/* <OpenToWork /> */}
-          <h2 className='sr-only'>Colophon</h2>
+          <h3 className='sr-only'>Colophon</h3>
           <Minus
             size={16}
             strokeWidth={1.25}
