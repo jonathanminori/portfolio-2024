@@ -134,26 +134,6 @@ export default function Home() {
           <p>A few things I work on outside of my day job.</p>
           <div className='grid grid-cols-1 gap-1 sm:grid-cols-2'>
             <a
-              href='https://adplist.org/mentors/jonathan-minori'
-              title='View my ADPList profile'
-              className='group no-underline'
-            >
-              <div
-                id='able'
-                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-md bg-slate-900'
-              >
-                <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
-                <div className='z-10 bg-gradient-to-t from-slate-900/95 from-40% to-slate-900/0 px-6 pb-2 pt-12'>
-                  <h3 className='readable mb-1.5 text-lg font-normal text-white'>
-                    ADPList
-                  </h3>
-                  <p className='readable text-base font-normal leading-snug text-white opacity-90 group-hover:opacity-100'>
-                    1,000+ minutes mentoring designers on career moves.
-                  </p>
-                </div>
-              </div>
-            </a>
-            <a
               href='http://www.ableworks.co'
               title='Able'
               className='group no-underline'
@@ -180,7 +160,7 @@ export default function Home() {
                 id='pickle-thumbs'
                 className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-md bg-[#08A24B]'
               >
-                <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
+                <BackgroundVideo videoSrc='videos/picklethumbs2.mp4' />
                 {/* <Image
                   src={ExtraPickleThumbBG}
                   placeholder='blur'
@@ -188,12 +168,52 @@ export default function Home() {
                   alt='Pickle Thumbs BG'
                   className='z-0 mt-0 object-cover opacity-40 transition-transform duration-500 ease-in-out group-hover:scale-105'
                 /> */}
-                <div className='z-10 bg-gradient-to-t from-[#08A24B]/80 from-20% to-[#08A24B]/0 px-6 pb-2 pt-12'>
+                <div className='z-10 bg-gradient-to-t from-[#08A24B]/100 from-20% to-[#08A24B]/0 px-6 pb-2 pt-12'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     Pickle Thumbs
                   </h3>
                   <p className='readable text-base font-normal leading-snug text-white opacity-90 group-hover:opacity-100'>
                     Making things to help gardeners find their green thumb.
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a
+              href='https://adplist.org/mentors/jonathan-minori'
+              title='View my ADPList profile'
+              className='group no-underline'
+            >
+              <div
+                id='able'
+                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-md bg-slate-900'
+              >
+                <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
+                <div className='z-10 bg-gradient-to-t from-slate-900/95 from-40% to-slate-900/0 px-6 pb-2 pt-12'>
+                  <h3 className='readable mb-1.5 text-lg font-normal text-white'>
+                    ADPList
+                  </h3>
+                  <p className='readable text-base font-normal leading-snug text-white opacity-90 group-hover:opacity-100'>
+                    1,000+ minutes mentoring designers on career moves.
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a
+              href='https://www.trainseasons.com'
+              title='Check out Seasons'
+              className='group no-underline'
+            >
+              <div
+                id='able'
+                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-md bg-slate-900'
+              >
+                <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
+                <div className='z-10 bg-gradient-to-t from-slate-900/95 from-40% to-slate-900/0 px-6 pb-2 pt-12'>
+                  <h3 className='readable mb-1.5 text-lg font-normal text-white'>
+                    Seasons
+                  </h3>
+                  <p className='readable text-base font-normal leading-snug text-white opacity-90 group-hover:opacity-100'>
+                    Advising the team on product design and development.
                   </p>
                 </div>
               </div>
