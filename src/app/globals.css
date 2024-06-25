@@ -124,7 +124,7 @@ html {
 }
 
 .colophon-link {
-  @apply text-neutral-600 no-underline transition-colors duration-200 ease-in-out hover:text-neutral-950;
+  @apply text-neutral-500 no-underline transition-colors duration-200 ease-in-out hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-neutral-50;
 }
 
 .readable {

@@ -15,34 +15,6 @@ import Sticky from '@/components/sticky'
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
 
 export default function Home() {
-  // const line1Ref = useRef<HTMLDivElement>(null)
-  // const line2Ref = useRef<HTMLDivElement>(null)
-  // const tl = useRef(gsap.timeline({ paused: true }))
-
-  // useEffect(() => {
-  //   gsap.set(line1Ref.current, { y: 0, autoAlpha: 1 })
-  //   gsap.set(line2Ref.current!.children, { y: 12, autoAlpha: 0 })
-
-  //   // Define the timeline for animation
-  //   tl.current
-  //     .to(
-  //       line1Ref.current,
-  //       { y: -12, autoAlpha: 0, duration: 0.4, ease: 'power3.inOut' },
-  //       0
-  //     )
-  //     .to(
-  //       line2Ref.current!.children,
-  //       {
-  //         y: 0,
-  //         autoAlpha: 1,
-  //         stagger: 0.1,
-  //         duration: 0.4,
-  //         ease: 'power2.inOut'
-  //       },
-  //       0
-  //     )
-  // }, [])
-
   const h2Ref = useRef<HTMLHeadingElement>(null)
   const preMinoRef = useRef<HTMLSpanElement>(null)
   const minoRef = useRef<HTMLSpanElement>(null)
@@ -69,6 +41,7 @@ export default function Home() {
           {
             y: 20,
             duration: 0.5,
+            opacity: 0,
             ease: 'power3.inOut'
           },
           0
@@ -78,6 +51,7 @@ export default function Home() {
           {
             y: -20,
             duration: 0.5,
+            opacty: 0,
             ease: 'power3.inOut'
           },
           0
@@ -111,31 +85,6 @@ export default function Home() {
             onMouseOut={handleMouseOut}
             className='cursor-default'
           >
-            {/* <div className='relative mb-1 h-5 overflow-hidden'>
-              <h1
-                ref={line1Ref}
-                className='absolute z-10 text-base font-medium leading-tight text-neutral-950 dark:text-neutral-200'
-              >
-                <span className='inline-block'>Jonathan Minori</span>
-              </h1>
-              <h1
-                ref={line2Ref}
-                className='relative z-0 text-base font-medium leading-tight text-neutral-950 dark:text-neutral-200'
-              >
-                {textToSpans('Mino')}
-              </h1>
-            </div> */}
-            {/* <h1 className='text-base font-medium leading-tight text-neutral-950 dark:text-neutral-200'>
-              <span ref={preMinoRef} className='inline-block'>
-                Jonathan{' '}
-              </span>
-              <span ref={minoRef} className='inline-block text-red-500'>
-                Mino
-              </span>
-              <span ref={postMinoRef} className='inline-block'>
-                ri
-              </span>
-            </h1> */}
             <h1
               ref={h2Ref}
               className='mb-1.5 h-5 overflow-hidden text-base font-medium leading-tight text-neutral-950 dark:text-neutral-200'
@@ -166,17 +115,6 @@ export default function Home() {
               Design Director based in Portland, Oregon
             </h2>
           </div>
-
-          {/* <h1 className='group text-base font-normal text-neutral-950 dark:text-neutral-200'>
-            <span className='delay-800 transition-opacity duration-[1600ms] ease-linear group-hover:opacity-10'>
-              Jonathan{' '}
-            </span>
-            Mino
-            <span className='delay-800 transition-opacity duration-[1600ms] ease-linear group-hover:opacity-10'>
-              ri
-            </span>
-            <br />
-          </h1> */}
         </article>
         <article
           id='bio'
@@ -407,7 +345,10 @@ export default function Home() {
             Webby, SXSW, and FWA.
           </p>
         </article>
-        <article id='contact' className='mb-28'>
+        <article
+          id='contact'
+          className='mb-28 text-neutral-950 dark:text-neutral-200'
+        >
           <h3 className='info-headline'>Connect</h3>
           <p>
             Currently available for both contract and full-time opportunities.
@@ -476,7 +417,7 @@ export default function Home() {
             </li>
           </ul>
         </article>
-        <article id='colophon' className='relative text-xs text-neutral-500'>
+        <article id='colophon' className='relative text-xs text-neutral-400'>
           {/* <OpenToWork /> */}
           <h3 className='sr-only'>Colophon</h3>
           <Minus
