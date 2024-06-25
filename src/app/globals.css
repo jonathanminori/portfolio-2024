@@ -108,7 +108,7 @@ html {
 }
 
 .skill {
-  @apply m-0 rounded bg-neutral-50 px-3 py-1 text-lg transition-colors duration-300 ease-in-out hover:rounded-full;
+  @apply m-0 select-none rounded bg-neutral-50 px-3 py-1 text-lg transition-colors duration-300 ease-in-out hover:rounded-full;
 }
 
 .skill-a {

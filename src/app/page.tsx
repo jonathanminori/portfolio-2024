@@ -6,7 +6,7 @@ import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
-import { ArrowUpRight, Minus } from 'lucide-react'
+import { ArrowUpRight, LucideHeading1, Minus } from 'lucide-react'
 import TestimonialsBadge from '@/components/testimonials-badge'
 import AnimatedText from '@/components/animatedtext'
 import BackgroundVideo from '@/components/backgroundvideo'
@@ -15,22 +15,83 @@ import Sticky from '@/components/sticky'
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
 
 export default function Home() {
-  const line1Ref = useRef<HTMLDivElement>(null)
-  const line2Ref = useRef<HTMLDivElement>(null)
-  const tl = useRef(gsap.timeline({ paused: true }))
+  // const line1Ref = useRef<HTMLDivElement>(null)
+  // const line2Ref = useRef<HTMLDivElement>(null)
+  // const tl = useRef(gsap.timeline({ paused: true }))
+
+  // useEffect(() => {
+  //   gsap.set(line1Ref.current, { y: 0, autoAlpha: 1 })
+  //   gsap.set(line2Ref.current!.children, { y: 12, autoAlpha: 0 })
+
+  //   // Define the timeline for animation
+  //   tl.current
+  //     .to(
+  //       line1Ref.current,
+  //       { y: -12, autoAlpha: 0, duration: 0.4, ease: 'power3.inOut' },
+  //       0
+  //     )
+  //     .to(
+  //       line2Ref.current!.children,
+  //       {
+  //         y: 0,
+  //         autoAlpha: 1,
+  //         stagger: 0.1,
+  //         duration: 0.4,
+  //         ease: 'power2.inOut'
+  //       },
+  //       0
+  //     )
+  // }, [])
+
+  const h2Ref = useRef<HTMLHeadingElement>(null)
+  const preMinoRef = useRef<HTMLSpanElement>(null)
+  const minoRef = useRef<HTMLSpanElement>(null)
+  const postMinoRef = useRef<HTMLSpanElement>(null)
+  const tl = useRef<GSAPTimeline>(gsap.timeline({ paused: true }))
 
   useEffect(() => {
-    gsap.set(line1Ref.current, { y: 0, autoAlpha: 1 })
-    gsap.set(line2Ref.current!.children, { y: 20, autoAlpha: 0 })
+    if (
+      h2Ref.current &&
+      preMinoRef.current &&
+      minoRef.current &&
+      postMinoRef.current
+    ) {
+      // Calculate the offset width needed to move h2Ref left
+      const preMinoWidth = preMinoRef.current.offsetWidth
 
-    // Define the timeline for animation
-    tl.current
-      .to(line1Ref.current, { y: -20, autoAlpha: 0, duration: 0.5 }, 0)
-      .to(
-        line2Ref.current!.children,
-        { y: 0, autoAlpha: 1, stagger: 0.05, duration: 0.5 },
-        0
-      )
+      // Clear any existing animations
+      tl.current.clear()
+
+      // Setup and synchronize animations
+      tl.current
+        .to(
+          preMinoRef.current,
+          {
+            y: 20,
+            duration: 0.5,
+            ease: 'power3.inOut'
+          },
+          0
+        ) // Start time label "0" ensures synchronous start
+        .to(
+          postMinoRef.current,
+          {
+            y: -20,
+            duration: 0.5,
+            ease: 'power3.inOut'
+          },
+          0
+        ) // Same start time for synchronization
+        .to(
+          h2Ref.current,
+          {
+            x: -preMinoWidth,
+            duration: 0.8,
+            ease: 'back.inOut'
+          },
+          0
+        ) // Same start time to move h2Ref left simultaneously
+    }
   }, [])
 
   const handleMouseOver = () => {
@@ -41,25 +102,6 @@ export default function Home() {
     tl.current.reverse()
   }
 
-  const textToSpans = (text: string) => {
-    return text.split('').map((char, index) => (
-      <span key={index} className='inline-block whitespace-pre'>
-        {char}
-      </span>
-    ))
-  }
-
-  useEffect(() => {
-    ScrollSmoother.create({
-      wrapper: '#wrapper',
-      content: '#content',
-      smooth: 1.2,
-      effects: true,
-      normalizeScroll: true,
-      ignoreMobileResize: true
-    })
-  }, [])
-
   return (
     <div id='wrapper' className='container z-10'>
       <div id='content' className='prose pb-48 pt-24 text-xl font-normal'>
@@ -69,7 +111,7 @@ export default function Home() {
             onMouseOut={handleMouseOut}
             className='cursor-default'
           >
-            <div className='relative mb-1 h-5 overflow-hidden'>
+            {/* <div className='relative mb-1 h-5 overflow-hidden'>
               <h1
                 ref={line1Ref}
                 className='absolute z-10 text-base font-medium leading-tight text-neutral-950 dark:text-neutral-200'
@@ -80,9 +122,46 @@ export default function Home() {
                 ref={line2Ref}
                 className='relative z-0 text-base font-medium leading-tight text-neutral-950 dark:text-neutral-200'
               >
-                {textToSpans('mino')}
+                {textToSpans('Mino')}
               </h1>
-            </div>
+            </div> */}
+            {/* <h1 className='text-base font-medium leading-tight text-neutral-950 dark:text-neutral-200'>
+              <span ref={preMinoRef} className='inline-block'>
+                Jonathan{' '}
+              </span>
+              <span ref={minoRef} className='inline-block text-red-500'>
+                Mino
+              </span>
+              <span ref={postMinoRef} className='inline-block'>
+                ri
+              </span>
+            </h1> */}
+            <h1
+              ref={h2Ref}
+              className='mb-1.5 h-5 overflow-hidden text-base font-medium leading-tight text-neutral-950 dark:text-neutral-200'
+            >
+              <span ref={preMinoRef} className='inline-block'>
+                {'Jonathan '.split('').map((char, index) => (
+                  <span key={index} className='inline-block'>
+                    {char === ' ' ? '\u00A0' : char}
+                  </span>
+                ))}
+              </span>
+              <span ref={minoRef} className='inline-block'>
+                {'Mino'.split('').map((char, index) => (
+                  <span key={index} className='inline-block'>
+                    {char}
+                  </span>
+                ))}
+              </span>
+              <span ref={postMinoRef} className='inline-block'>
+                {'ri'.split('').map((char, index) => (
+                  <span key={index} className='inline-block'>
+                    {char}
+                  </span>
+                ))}
+              </span>
+            </h1>
             <h2 className='mt-0 text-sm font-normal text-neutral-950 opacity-60 dark:text-neutral-200'>
               Design Director based in Portland, Oregon
             </h2>
@@ -153,17 +232,18 @@ export default function Home() {
             <Sticky>
               <li className='skill skill-a'>Product Strategy</li>
             </Sticky>
+
+            <Sticky>
+              <li className='skill skill-a'>User Research</li>
+            </Sticky>
             <Sticky>
               <li className='skill skill-a'>Brand Strategy</li>
             </Sticky>
             <Sticky>
-              <li className='skill skill-a'>Creative Direction</li>
+              <li className='skill skill-b'>Creative Direction</li>
             </Sticky>
             <Sticky>
-              <li className='skill skill-a'>Art Direction</li>
-            </Sticky>
-            <Sticky>
-              <li className='skill skill-a'>User Research</li>
+              <li className='skill skill-b'>Art Direction</li>
             </Sticky>
             <Sticky>
               <li className='skill skill-b'>Product Design</li>
@@ -196,7 +276,7 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-md bg-[#FCFFDE]'
+                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-[#FCFFDE]'
               >
                 <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
                 <div className='z-10 bg-gradient-to-t from-[#FCFFDE]/95 from-40% to-[#FCFFDE]/0 px-6 pb-2 pt-12'>
@@ -214,7 +294,7 @@ export default function Home() {
             >
               <div
                 id='pickle-thumbs'
-                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-md bg-[#08A24B]'
+                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-[#08A24B]'
               >
                 <BackgroundVideo videoSrc='videos/picklethumbs2.mp4' />
                 {/* <Image
@@ -241,7 +321,7 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-md bg-slate-900'
+                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-slate-900'
               >
                 <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
                 <div className='z-10 bg-gradient-to-t from-slate-900/95 from-40% to-slate-900/0 px-6 pb-2 pt-12'>
@@ -261,10 +341,10 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-md bg-slate-900'
+                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-slate-700'
               >
-                <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
-                <div className='z-10 bg-gradient-to-t from-slate-900/95 from-40% to-slate-900/0 px-6 pb-2 pt-12'>
+                <BackgroundVideo videoSrc='videos/seasons.mp4' />
+                <div className='z-10 bg-gradient-to-t from-slate-700/95 from-40% to-slate-700/0 px-6 pb-2 pt-12'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     Seasons
                   </h3>
