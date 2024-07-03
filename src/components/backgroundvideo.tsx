@@ -9,7 +9,7 @@ interface BackgroundVideoProps {
 const BackgroundVideo: React.FC<BackgroundVideoProps> = ({ videoSrc }) => {
   return (
     <video
-      className='absolute inset-0 mt-0 h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110'
+      className='absolute inset-0 mt-0 h-full w-full object-cover'
       autoPlay
       muted
       loop

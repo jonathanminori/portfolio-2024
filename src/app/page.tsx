@@ -21,6 +21,24 @@ export default function Home() {
   const postMinoRef = useRef<HTMLSpanElement>(null)
   const tl = useRef<GSAPTimeline>(gsap.timeline({ paused: true }))
 
+  const skills = [
+    'Creative Leadership',
+    'Product Strategy',
+    'User Research',
+    'Brand Strategy',
+    'Creative Direction',
+    'Art Direction',
+    'Product Design',
+    'Prototyping',
+    'Design Systems',
+    'Talent Development'
+  ]
+
+  const classes = ['skill-a', 'skill-b', 'skill-c']
+
+  const getRandomClass = () =>
+    classes[Math.floor(Math.random() * classes.length)]
+
   useEffect(() => {
     if (
       h2Ref.current &&
@@ -126,6 +144,7 @@ export default function Home() {
             startChar={80}
             endChar={1200}
           />
+          <p>Read my full CV here</p>
           {/* <p className='text-3xl font-light leading-snug'>
             I&apos;m a hands-on leader and startup founder with two decades of
             experience driving innovation and creative excellence.
@@ -158,7 +177,7 @@ export default function Home() {
             opportunities to deliver exceptional products and foster a culture
             of innovation and excellence.
           </p>
-          <p>Let’s build something extraordinary together. </p>
+
           {/* <TestimonialsBadge /> */}
         </article>
         <article
@@ -167,37 +186,11 @@ export default function Home() {
         >
           <h3 className='info-headline mt-0'>Core Skills</h3>
           <ul className='relative m-0 flex list-none flex-wrap items-baseline justify-start gap-0.5 p-0'>
-            <Sticky>
-              <li className='skill skill-a'>Product Strategy</li>
-            </Sticky>
-
-            <Sticky>
-              <li className='skill skill-a'>User Research</li>
-            </Sticky>
-            <Sticky>
-              <li className='skill skill-a'>Brand Strategy</li>
-            </Sticky>
-            <Sticky>
-              <li className='skill skill-b'>Creative Direction</li>
-            </Sticky>
-            <Sticky>
-              <li className='skill skill-b'>Art Direction</li>
-            </Sticky>
-            <Sticky>
-              <li className='skill skill-b'>Product Design</li>
-            </Sticky>
-            <Sticky>
-              <li className='skill skill-b'>Prototyping</li>
-            </Sticky>
-            <Sticky>
-              <li className='skill skill-b'>Design Systems</li>
-            </Sticky>
-            <Sticky>
-              <li className='skill skill-c'>Creative Leadership</li>
-            </Sticky>
-            <Sticky>
-              <li className='skill skill-c'>Talent Development</li>
-            </Sticky>
+            {skills.map((skill, index) => (
+              <Sticky key={index}>
+                <li className={`skill ${getRandomClass()}`}>{skill}</li>
+              </Sticky>
+            ))}
           </ul>
         </article>
         <article
@@ -235,14 +228,7 @@ export default function Home() {
                 className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-[#08A24B]'
               >
                 <BackgroundVideo videoSrc='videos/picklethumbs2.mp4' />
-                {/* <Image
-                  src={ExtraPickleThumbBG}
-                  placeholder='blur'
-                  fill
-                  alt='Pickle Thumbs BG'
-                  className='z-0 mt-0 object-cover opacity-40 transition-transform duration-500 ease-in-out group-hover:scale-105'
-                /> */}
-                <div className='z-10 bg-gradient-to-t from-[#08A24B]/100 from-20% to-[#08A24B]/0 px-6 pb-2 pt-12'>
+                <div className='z-10 bg-gradient-to-t from-[#08A24B]/95 from-20% to-[#08A24B]/0 px-6 pb-2 pt-12'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     Pickle Thumbs
                   </h3>
@@ -292,47 +278,6 @@ export default function Home() {
                 </div>
               </div>
             </a>
-            {/* <a
-              href='http://www.picklethumbs.com'
-              title='Pickle Thumbs'
-              className='group no-underline'
-            >
-              <div
-                id='pickle-thumbs'
-                className='flex h-96 w-full flex-col justify-between overflow-hidden rounded-md bg-[#08A24B]'
-              >
-                <div className='relative aspect-4/3 overflow-hidden'>
-                  <Image
-                    src={ExtraPickleThumb}
-                    placeholder='blur'
-                    width={450}
-                    height={400}
-                    alt='Pickle Thumbs'
-                    className='relative z-30 mt-0 -translate-y-4 transition-all duration-300 ease-in-out group-hover:scale-110'
-                  />
-                  <div className='absolute bottom-0 left-0 z-20 h-full w-full bg-gradient-to-t from-[#08A24B] to-[#08A24B]/0 to-40%'></div>
-                  <Image
-                    src={ExtraPickleThumbBG}
-                    placeholder='blur'
-                    fill
-                    alt='Pickle Thumbs BG'
-                    className='z-10 mt-0 object-cover opacity-40'
-                  />
-                </div>
-                <div className='px-8 pb-3'>
-                  <h3 className='mb-1.5  font-medium text-white'>
-                    Pickle Thumbs
-                  </h3>
-                  <p className=' leading-snug text-white opacity-80'>
-                    Making things to help gardeners find their green thumb.
-                  </p>
-                </div>
-              </div>
-            </a> */}
-            {/* <div
-              id='secret'
-              className='hidden h-full w-full select-none items-center justify-center rounded-md bg-neutral-50 text-sm text-neutral-400 dark:bg-neutral-900 dark:text-neutral-500 sm:flex'
-            ></div> */}
           </div>
         </article>
         <article
