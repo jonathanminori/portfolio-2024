@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: 'Jonathan Minori',
     description: 'Design Director based in Portland, Oregon',
     creator: '@jonminori',
-    images: ['https://portfolio-2024-three-coral.vercel.app/img/twitter.jpg'] // Must be an absolute URL
+    images: ['https://www.mino.xyz/img/twitter.jpg'] // Must be an absolute URL
   },
   openGraph: {
     title: 'Jonathan Minori',
@@ -37,19 +37,19 @@ export const metadata: Metadata = {
     siteName: 'Jonathan Minori',
     images: [
       {
-        url: 'https://portfolio-2024-three-coral.vercel.app/img/opengraph-image-800x600.jpg', // Must be an absolute URL
+        url: 'https://www.mino.xyz/img/opengraph-image-800x600.jpg', // Must be an absolute URL
         width: 800,
         height: 600,
         alt: 'Jonathan Minori - Design Director based in Portland, Oregon'
       },
       {
-        url: 'https://portfolio-2024-three-coral.vercel.app/img/opengraph-image-1200x630.jpg', // Must be an absolute URL
+        url: 'https://www.mino.xyz/img/opengraph-image-1200x630.jpg', // Must be an absolute URL
         width: 1200,
         height: 630,
         alt: 'Jonathan Minori - Design Director based in Portland, Oregon'
       },
       {
-        url: 'https://portfolio-2024-three-coral.vercel.app/img/opengraph-image-1800x1600.jpg', // Must be an absolute URL
+        url: 'https://www.mino.xyz/img/opengraph-image-1800x1600.jpg', // Must be an absolute URL
         width: 1800,
         height: 1600,
         alt: 'Jonathan Minori - Design Director based in Portland, Oregon'
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   }
 }
 
-const testimonial_options: EmblaOptionsType = { align: 'start', loop: true }
+// const testimonial_options: EmblaOptionsType = { align: 'start', loop: true }
 
 export default function Home({
   children

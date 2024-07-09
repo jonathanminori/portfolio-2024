@@ -47,7 +47,7 @@ export default function Header() {
           <li className='mt-[2px]'>
             <button
               onClick={() => toggleDarkMode()}
-              className='text-neutral-700 hover:opacity-60 dark:text-neutral-200'
+              className='cursor-pointer text-neutral-700 hover:opacity-60 dark:text-neutral-200'
             >
               {darkMode && (
                 <SunMedium size={13} strokeWidth={1.25} absoluteStrokeWidth />

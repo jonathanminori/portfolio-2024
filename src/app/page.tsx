@@ -97,12 +97,8 @@ export default function Home() {
   return (
     <div id='wrapper' className='container z-10'>
       <div id='content' className='prose pb-48 pt-24 text-xl font-normal'>
-        <article id='intro' className='mb-14 cursor-help'>
-          <div
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
-            className='cursor-default'
-          >
+        <article id='intro' className='mb-14'>
+          <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
             <h1
               ref={h2Ref}
               className='mb-1.5 h-5 overflow-hidden text-base font-medium leading-tight text-neutral-950 dark:text-neutral-200'
@@ -144,7 +140,6 @@ export default function Home() {
             startChar={80}
             endChar={1200}
           />
-          <p>Read my full CV here</p>
           {/* <p className='text-3xl font-light leading-snug'>
             I&apos;m a hands-on leader and startup founder with two decades of
             experience driving innovation and creative excellence.
@@ -203,14 +198,14 @@ export default function Home() {
             <a
               href='http://www.ableworks.co'
               title='Able'
-              className='group no-underline'
+              className='group cursor-pointer no-underline'
             >
               <div
                 id='able'
-                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-[#FCFFDE]'
+                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-[#F6FF92]'
               >
                 <BackgroundVideo videoSrc='videos/able.mp4' />
-                <div className='z-10 bg-gradient-to-t from-[#F6FF92]/95 from-40% to-[#F6FF92]/0 px-6 pb-2 pt-12'>
+                <div className='z-10 bg-gradient-to-t from-[#F6FF92]/95 from-40% to-[#F6FF92]/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
                   <h3 className='readable mb-1.5 text-lg font-normal'>Able</h3>
                   <p className='readable text-base font-normal leading-snug opacity-90 group-hover:opacity-100'>
                     AI-edited instructional videos for frontline teams.
@@ -228,7 +223,7 @@ export default function Home() {
                 className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-[#08A24B]'
               >
                 <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
-                <div className='z-10 bg-gradient-to-t from-[#08A24B]/95 from-20% to-[#08A24B]/0 px-6 pb-2 pt-12'>
+                <div className='z-10 bg-gradient-to-t from-[#08A24B]/95 from-20% to-[#08A24B]/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     Pickle Thumbs
                   </h3>
@@ -248,7 +243,7 @@ export default function Home() {
                 className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-slate-900'
               >
                 <BackgroundVideo videoSrc='videos/adplist.mp4' />
-                <div className='z-10 bg-gradient-to-t from-slate-900/95 from-40% to-slate-900/0 px-6 pb-2 pt-12'>
+                <div className='z-10 bg-gradient-to-t from-slate-900/95 from-40% to-slate-900/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     ADPList
                   </h3>
@@ -268,7 +263,7 @@ export default function Home() {
                 className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-slate-700'
               >
                 <BackgroundVideo videoSrc='videos/seasons.mp4' />
-                <div className='z-10 bg-gradient-to-t from-slate-700/95 from-40% to-slate-700/0 px-6 pb-2 pt-12'>
+                <div className='z-10 bg-gradient-to-t from-slate-700/95 from-40% to-slate-700/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     Seasons
                   </h3>
@@ -287,7 +282,7 @@ export default function Home() {
           <h3 className='info-headline'>Recognition</h3>
           <p>
             My work has won notable industry awards, including Cannes, One Show,
-            Webby, SXSW, and FWA.
+            Webby Awards, SXSW, and FWA.
           </p>
         </article>
         <article
@@ -297,6 +292,7 @@ export default function Home() {
           <h3 className='info-headline'>Connect</h3>
           <p>
             Currently available for both contract and full-time opportunities.
+            Please e-mail me or slide into my DMs for access to case studies.
           </p>
           <ul className='list-outside list-none p-0'>
             <li className='contact-list'>
