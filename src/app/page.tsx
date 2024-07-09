@@ -247,7 +247,7 @@ export default function Home() {
                 id='able'
                 className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-slate-900'
               >
-                <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
+                <BackgroundVideo videoSrc='videos/adplist.mp4' />
                 <div className='z-10 bg-gradient-to-t from-slate-900/95 from-40% to-slate-900/0 px-6 pb-2 pt-12'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     ADPList
