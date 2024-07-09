@@ -177,7 +177,7 @@ export default function Home() {
         </article>
         <article
           id='core'
-          className='group mb-20 w-168 -translate-x-8 p-8 text-neutral-950 dark:text-neutral-200'
+          className='group mb-20 w-full -translate-x-8 p-8 text-neutral-950 dark:text-neutral-200 sm:w-168'
         >
           <h3 className='info-headline mt-0'>Core Skills</h3>
           <ul className='relative m-0 flex list-none flex-wrap items-baseline justify-start gap-0.5 p-0'>
@@ -194,7 +194,7 @@ export default function Home() {
         >
           <h3 className='info-headline !mb-5'>Extracurriculars</h3>
           <p>A few things I work on outside of my day job.</p>
-          <div className='grid grid-cols-1 gap-1 sm:grid-cols-2'>
+          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-1'>
             <a
               href='http://www.ableworks.co'
               title='Able'
@@ -202,7 +202,7 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-[#F6FF92]'
+                className='relative flex h-96 w-4/5 flex-col justify-end overflow-hidden rounded-lg bg-[#F6FF92] sm:w-full'
               >
                 <BackgroundVideo videoSrc='videos/able.mp4' />
                 <div className='z-10 bg-gradient-to-t from-[#F6FF92]/95 from-40% to-[#F6FF92]/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
@@ -220,7 +220,7 @@ export default function Home() {
             >
               <div
                 id='pickle-thumbs'
-                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-[#08A24B]'
+                className='relative flex h-96 w-4/5 flex-col justify-end overflow-hidden rounded-lg bg-[#08A24B] sm:w-full'
               >
                 <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
                 <div className='z-10 bg-gradient-to-t from-[#08A24B]/95 from-20% to-[#08A24B]/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
@@ -240,7 +240,7 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-slate-900'
+                className='relative flex h-96 w-4/5 flex-col justify-end overflow-hidden rounded-lg bg-slate-900 sm:w-full'
               >
                 <BackgroundVideo videoSrc='videos/adplist.mp4' />
                 <div className='z-10 bg-gradient-to-t from-slate-900/95 from-40% to-slate-900/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
@@ -260,7 +260,7 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-slate-700'
+                className='relative flex h-96 w-4/5 flex-col justify-end overflow-hidden rounded-lg bg-slate-700 sm:w-full'
               >
                 <BackgroundVideo videoSrc='videos/seasons.mp4' />
                 <div className='z-10 bg-gradient-to-t from-slate-700/95 from-40% to-slate-700/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
