@@ -209,8 +209,8 @@ export default function Home() {
                 id='able'
                 className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-[#FCFFDE]'
               >
-                <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
-                <div className='z-10 bg-gradient-to-t from-[#FCFFDE]/95 from-40% to-[#FCFFDE]/0 px-6 pb-2 pt-12'>
+                <BackgroundVideo videoSrc='videos/able.mp4' />
+                <div className='z-10 bg-gradient-to-t from-[#F6FF92]/95 from-40% to-[#F6FF92]/0 px-6 pb-2 pt-12'>
                   <h3 className='readable mb-1.5 text-lg font-normal'>Able</h3>
                   <p className='readable text-base font-normal leading-snug opacity-90 group-hover:opacity-100'>
                     AI-edited instructional videos for frontline teams.
@@ -227,7 +227,7 @@ export default function Home() {
                 id='pickle-thumbs'
                 className='relative flex h-96 w-full flex-col justify-end overflow-hidden rounded-lg bg-[#08A24B]'
               >
-                <BackgroundVideo videoSrc='videos/picklethumbs2.mp4' />
+                <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
                 <div className='z-10 bg-gradient-to-t from-[#08A24B]/95 from-20% to-[#08A24B]/0 px-6 pb-2 pt-12'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     Pickle Thumbs
