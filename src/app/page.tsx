@@ -198,6 +198,7 @@ export default function Home() {
             <a
               href='http://www.ableworks.co'
               title='Able'
+              target='_blank'
               className='group cursor-pointer no-underline'
             >
               <div
@@ -216,6 +217,7 @@ export default function Home() {
             <a
               href='http://www.picklethumbs.com'
               title='Pickle Thumbs'
+              target='_blank'
               className='group no-underline'
             >
               <div
@@ -236,6 +238,7 @@ export default function Home() {
             <a
               href='https://adplist.org/mentors/jonathan-minori'
               title='View my ADPList profile'
+              target='_blank'
               className='group no-underline'
             >
               <div
@@ -256,6 +259,7 @@ export default function Home() {
             <a
               href='https://www.trainseasons.com'
               title='Check out Seasons'
+              target='_blank'
               className='group no-underline'
             >
               <div

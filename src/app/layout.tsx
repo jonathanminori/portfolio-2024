@@ -36,18 +36,18 @@ export const metadata: Metadata = {
     url: 'https://www.mino.xyz',
     siteName: 'Jonathan Minori',
     images: [
-      {
-        url: 'https://www.mino.xyz/img/opengraph-image-800x600.jpg', // Must be an absolute URL
-        width: 800,
-        height: 600,
-        alt: 'Jonathan Minori - Design Director based in Portland, Oregon'
-      },
-      {
-        url: 'https://www.mino.xyz/img/opengraph-image-1200x630.jpg', // Must be an absolute URL
-        width: 1200,
-        height: 630,
-        alt: 'Jonathan Minori - Design Director based in Portland, Oregon'
-      },
+      // {
+      //   url: 'https://www.mino.xyz/img/opengraph-image-800x600.jpg', // Must be an absolute URL
+      //   width: 800,
+      //   height: 600,
+      //   alt: 'Jonathan Minori - Design Director based in Portland, Oregon'
+      // },
+      // {
+      //   url: 'https://www.mino.xyz/img/opengraph-image-1200x630.jpg', // Must be an absolute URL
+      //   width: 1200,
+      //   height: 630,
+      //   alt: 'Jonathan Minori - Design Director based in Portland, Oregon'
+      // },
       {
         url: 'https://www.mino.xyz/img/opengraph-image-1800x1600.jpg', // Must be an absolute URL
         width: 1800,
