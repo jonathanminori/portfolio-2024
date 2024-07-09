@@ -203,12 +203,14 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='relative flex h-96 w-4/5 flex-col justify-end overflow-hidden rounded-lg bg-[#F6FF92] sm:w-full'
+                className='relative flex h-96 w-4/5 flex-col justify-end overflow-hidden rounded-lg bg-[#B16637] sm:w-full'
               >
                 <BackgroundVideo videoSrc='videos/able.mp4' />
-                <div className='z-10 bg-gradient-to-t from-[#F6FF92]/95 from-40% to-[#F6FF92]/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
-                  <h3 className='readable mb-1.5 text-lg font-normal'>Able</h3>
-                  <p className='readable text-base font-normal leading-snug opacity-90 group-hover:opacity-100'>
+                <div className='z-10 bg-gradient-to-t from-[#B16637]/95 from-40% to-[#B16637]/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
+                  <h3 className='readable mb-1.5 text-lg font-normal text-white'>
+                    Able
+                  </h3>
+                  <p className='readable text-base font-normal leading-snug text-white opacity-90 group-hover:opacity-100'>
                     AI-edited instructional videos for frontline teams.
                   </p>
                 </div>
