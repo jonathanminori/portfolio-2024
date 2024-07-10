@@ -140,7 +140,7 @@ export default function Home() {
             startChar={80}
             endChar={1200}
           />
-          {/* <TestimonialsBadge /> */}
+
           {/* <p className='text-3xl font-light leading-snug'>
             I&apos;m a hands-on leader and startup founder with two decades of
             experience driving innovation and creative excellence.
@@ -173,6 +173,7 @@ export default function Home() {
             opportunities to deliver exceptional products and foster a culture
             of innovation and excellence.
           </p>
+          {/* <TestimonialsBadge /> */}
         </article>
         <article
           id='core'
