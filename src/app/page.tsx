@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
@@ -14,30 +14,31 @@ import Sticky from '@/components/sticky'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
 
+const skillList = [
+  'Creative Leadership',
+  'Product Strategy',
+  'User Research',
+  'Brand Strategy',
+  'Creative Direction',
+  'Art Direction',
+  'Product Design',
+  'Prototyping',
+  'Design Systems',
+  'Talent Development'
+]
+
+const skillStyles = ['skill-a', 'skill-b', 'skill-c']
+
+const getRandomClass = () =>
+  skillStyles[Math.floor(Math.random() * skillStyles.length)]
+
 export default function Home() {
   const h2Ref = useRef<HTMLHeadingElement>(null)
   const preMinoRef = useRef<HTMLSpanElement>(null)
   const minoRef = useRef<HTMLSpanElement>(null)
   const postMinoRef = useRef<HTMLSpanElement>(null)
   const tl = useRef<GSAPTimeline>(gsap.timeline({ paused: true }))
-
-  const skills = [
-    'Creative Leadership',
-    'Product Strategy',
-    'User Research',
-    'Brand Strategy',
-    'Creative Direction',
-    'Art Direction',
-    'Product Design',
-    'Prototyping',
-    'Design Systems',
-    'Talent Development'
-  ]
-
-  const classes = ['skill-a', 'skill-b', 'skill-c']
-
-  const getRandomClass = () =>
-    classes[Math.floor(Math.random() * classes.length)]
+  const [classes, setClasses] = useState(skillList.map(() => getRandomClass()))
 
   useEffect(() => {
     if (
@@ -69,7 +70,7 @@ export default function Home() {
           {
             y: -20,
             duration: 0.5,
-            opacty: 0,
+            opacity: 0,
             ease: 'power3.inOut'
           },
           0
@@ -181,9 +182,9 @@ export default function Home() {
         >
           <h3 className='info-headline mt-0'>Core Skills</h3>
           <ul className='relative m-0 flex list-none flex-wrap items-baseline justify-start gap-0.5 p-0'>
-            {skills.map((skill, index) => (
+            {skillList.map((skill, index) => (
               <Sticky key={index}>
-                <li className={`skill ${getRandomClass()}`}>{skill}</li>
+                <li className={`skill-item ${classes[index]}`}>{skill}</li>
               </Sticky>
             ))}
           </ul>
@@ -193,7 +194,7 @@ export default function Home() {
           className='mb-28 text-neutral-950 dark:text-neutral-200'
         >
           <h3 className='info-headline !mb-5'>Extracurriculars</h3>
-          <p>A few things I'm doing in my free time.</p>
+          <p>A few things I&apos;m doing in my free time.</p>
           <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-1'>
             <a
               href='http://www.ableworks.co'
