@@ -4,6 +4,7 @@ import './globals.css'
 import Header from './header'
 import Testimonials from '@/components/testimonials'
 import { EmblaOptionsType } from 'embla-carousel'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
   title: 'Jonathan Minori',
