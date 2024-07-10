@@ -11,12 +11,11 @@ const workSamples: { src: string; alt: string }[] = [
 export default function Works() {
   const [steps, setSteps] = useState(0)
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [nbOfImages, setNbOfImages] = useState(0)
-  const maxNumberOfImages = workSamples.length
-  const refs: RefObject<HTMLImageElement>[] = Array.from(
-    { length: maxNumberOfImages },
-    () => useRef<HTMLImageElement>(null)
-  )
+  const refs = useRef<(HTMLImageElement | null)[]>([])
+
+  useEffect(() => {
+    refs.current = refs.current.slice(0, workSamples.length)
+  }, [])
 
   const manageMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     const { clientX, clientY, movementX, movementY } = e
@@ -26,58 +25,23 @@ export default function Works() {
       const newSteps = prevSteps + movementSteps
       if (newSteps >= currentIndex * 150) {
         moveImage(clientX, clientY)
-
-        if (nbOfImages === maxNumberOfImages) {
-          removeImage()
-        }
+        return 0 // Reset steps after moving the image
       }
-
-      if (currentIndex === refs.length) {
-        setCurrentIndex(0)
-        return -150
-      }
-      console.log(newSteps)
       return newSteps
     })
   }
 
   const moveImage = (x: number, y: number) => {
-    const currentImage = refs[currentIndex].current
+    const currentImage = refs.current[currentIndex]
     if (currentImage) {
       currentImage.style.left = `${x}px`
       currentImage.style.top = `${y}px`
       currentImage.style.display = 'block'
     }
-    setCurrentIndex(prevIndex => prevIndex + 1)
-    setNbOfImages(prevNbOfImages => prevNbOfImages + 1)
-    setZIndex()
-  }
-
-  const setZIndex = () => {
-    const images = getCurrentImages()
-    images.forEach((image, index) => {
-      image.style.zIndex = `${index}`
+    setCurrentIndex(prevIndex => {
+      const newIndex = prevIndex + 1
+      return newIndex % refs.current.length
     })
-  }
-
-  const removeImage = () => {
-    const images = getCurrentImages()
-    if (images.length > 0) {
-      images[0].style.display = 'none'
-      setNbOfImages(prevNbOfImages => prevNbOfImages - 1)
-    }
-  }
-
-  const getCurrentImages = () => {
-    let images: HTMLImageElement[] = []
-    let indexOfFirst = currentIndex - nbOfImages
-    for (let i = indexOfFirst; i < currentIndex; i++) {
-      let targetIndex = i
-      if (targetIndex < 0) targetIndex += refs.length
-      const image = refs[targetIndex].current
-      if (image) images.push(image)
-    }
-    return images
   }
 
   return (
@@ -88,7 +52,7 @@ export default function Works() {
       {workSamples.map((sample, index) => (
         <img
           key={index}
-          ref={refs[index]}
+          // ref={el => (refs.current[index] = el as HTMLImageElement)}
           src={sample.src}
           alt={sample.alt}
           className='absolute hidden w-1/2 -translate-x-1/2 -translate-y-1/2'
