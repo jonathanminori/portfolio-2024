@@ -194,7 +194,7 @@ export default function Home() {
           className='mb-28 text-neutral-950 dark:text-neutral-200'
         >
           <h3 className='info-headline !mb-5'>Extracurriculars</h3>
-          <p>A few things I&apos;m doing in my free time.</p>
+          <p>A few things I&apos;m doing on the side.</p>
           <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-1'>
             <a
               href='http://www.ableworks.co'
@@ -204,7 +204,7 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='relative flex h-96 w-4/5 flex-col justify-end overflow-hidden rounded-lg bg-[#B16637] sm:w-full'
+                className='relative flex h-96 flex-col justify-end overflow-hidden rounded-lg bg-[#B16637]'
               >
                 <BackgroundVideo videoSrc='videos/able.mp4' />
                 <div className='z-10 bg-gradient-to-t from-[#B16637]/95 from-40% to-[#B16637]/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
@@ -225,7 +225,7 @@ export default function Home() {
             >
               <div
                 id='pickle-thumbs'
-                className='relative flex h-96 w-4/5 flex-col justify-end overflow-hidden rounded-lg bg-[#08A24B] sm:w-full'
+                className='relative flex h-96 flex-col justify-end overflow-hidden rounded-lg bg-[#08A24B]'
               >
                 <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
                 <div className='z-10 bg-gradient-to-t from-[#08A24B]/95 from-20% to-[#08A24B]/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
@@ -246,12 +246,12 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='relative flex h-96 w-4/5 flex-col justify-end overflow-hidden rounded-lg bg-slate-900 sm:w-full'
+                className='relative flex h-96 flex-col justify-end overflow-hidden rounded-lg bg-slate-900'
               >
                 <BackgroundVideo videoSrc='videos/adplist.mp4' />
                 <div className='z-10 bg-gradient-to-t from-slate-900/95 from-40% to-slate-900/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
-                    Design Mentor
+                    Mentorship
                   </h3>
                   <p className='readable text-base font-normal leading-snug text-white opacity-90 group-hover:opacity-100'>
                     1,000+ minutes mentoring designers on career moves.
@@ -267,15 +267,16 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='relative flex h-96 w-4/5 flex-col justify-end overflow-hidden rounded-lg bg-slate-700 sm:w-full'
+                className='relative flex h-96 flex-col justify-end overflow-hidden rounded-lg bg-slate-700'
               >
                 <BackgroundVideo videoSrc='videos/seasons.mp4' />
                 <div className='z-10 bg-gradient-to-t from-slate-700/95 from-40% to-slate-700/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
-                    Seasons
+                    Advising
                   </h3>
                   <p className='readable text-base font-normal leading-snug text-white opacity-90 group-hover:opacity-100'>
-                    Advising the team on product design and development.
+                    Advising the team at Seasons on product design and
+                    development.
                   </p>
                 </div>
               </div>
