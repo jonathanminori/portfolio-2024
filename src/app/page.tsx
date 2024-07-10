@@ -192,7 +192,7 @@ export default function Home() {
           className='mb-28 text-neutral-950 dark:text-neutral-200'
         >
           <h3 className='info-headline !mb-5'>Extracurriculars</h3>
-          <p>A few things I work on the side.</p>
+          <p>A few things I'm doing in my free time.</p>
           <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-1'>
             <a
               href='http://www.ableworks.co'
