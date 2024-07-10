@@ -153,7 +153,7 @@ export default function Home() {
           </p> */}
         </article>
         <article
-          id='curently'
+          id='currently'
           className='relative mb-20 text-neutral-950 dark:text-neutral-200'
         >
           <h3 className='info-headline'>Currently</h3>
@@ -168,7 +168,7 @@ export default function Home() {
             outstanding product experiences and cultivating a culture of
             innovation and excellence.
           </p> */}
-          <p className='text-pretty'>
+          <p className='text-balance sm:text-pretty'>
             In my independent design practice, I help organizations launch
             products, build creative teams, and mentor designers. I seek
             opportunities to deliver exceptional products and foster a culture
@@ -177,11 +177,11 @@ export default function Home() {
           {/* <TestimonialsBadge /> */}
         </article>
         <article
-          id='core'
-          className='group mb-20 w-full -translate-x-8 p-8 text-neutral-950 dark:text-neutral-200 sm:w-168'
+          id='core-skill'
+          className='group relative mb-20 w-full text-neutral-950 dark:text-neutral-200 sm:w-168'
         >
           <h3 className='info-headline mt-0'>Core Skills</h3>
-          <ul className='relative m-0 flex list-none flex-wrap items-baseline justify-start gap-0.5 p-0'>
+          <ul className='relative m-0 flex list-none flex-wrap items-baseline justify-start gap-1 p-0'>
             {skillList.map((skill, index) => (
               <Sticky key={index}>
                 <li className={`skill-item ${classes[index]}`}>{skill}</li>
@@ -204,10 +204,10 @@ export default function Home() {
             >
               <div
                 id='able'
-                className='relative flex h-96 flex-col justify-end overflow-hidden rounded-lg bg-[#B16637]'
+                className='relative flex h-96 flex-col justify-end overflow-hidden rounded-lg bg-[#966037]'
               >
                 <BackgroundVideo videoSrc='videos/able.mp4' />
-                <div className='z-10 bg-gradient-to-t from-[#B16637]/95 from-40% to-[#B16637]/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
+                <div className='z-10 bg-gradient-to-t from-[#966037]/95 from-40% to-[#966037]/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     Able
                   </h3>
