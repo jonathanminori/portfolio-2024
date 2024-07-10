@@ -7,7 +7,7 @@ import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { ArrowUpRight, LucideHeading1, Minus } from 'lucide-react'
-import TestimonialsBadge from '@/components/testimonials-badge'
+// import TestimonialsBadge from '@/components/testimonials-badge'
 import AnimatedText from '@/components/animatedtext'
 import BackgroundVideo from '@/components/backgroundvideo'
 import Sticky from '@/components/sticky'
@@ -132,14 +132,15 @@ export default function Home() {
         </article>
         <article
           id='bio'
-          className='mb-28 text-neutral-950 dark:text-neutral-200'
+          className='relative mb-28 text-neutral-950 dark:text-neutral-200'
         >
-          <h3 className='info-headline sr-only'>Bio</h3>
+          <h3 className='info-headline sr-only'>Overview</h3>
           <AnimatedText
             text="I'm a hands-on leader and startup founder with two decades of experience driving innovation and creative excellence."
             startChar={80}
             endChar={1200}
           />
+          {/* <TestimonialsBadge /> */}
           {/* <p className='text-3xl font-light leading-snug'>
             I&apos;m a hands-on leader and startup founder with two decades of
             experience driving innovation and creative excellence.
@@ -172,8 +173,6 @@ export default function Home() {
             opportunities to deliver exceptional products and foster a culture
             of innovation and excellence.
           </p>
-
-          {/* <TestimonialsBadge /> */}
         </article>
         <article
           id='core'
@@ -193,13 +192,13 @@ export default function Home() {
           className='mb-28 text-neutral-950 dark:text-neutral-200'
         >
           <h3 className='info-headline !mb-5'>Extracurriculars</h3>
-          <p>A few things I work on outside of my day job.</p>
+          <p>A few things I work on the side.</p>
           <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-1'>
             <a
               href='http://www.ableworks.co'
               title='Able'
               target='_blank'
-              className='group cursor-pointer no-underline'
+              className='group cursor-alias no-underline'
             >
               <div
                 id='able'
@@ -220,7 +219,7 @@ export default function Home() {
               href='http://www.picklethumbs.com'
               title='Pickle Thumbs'
               target='_blank'
-              className='group no-underline'
+              className='group cursor-alias no-underline'
             >
               <div
                 id='pickle-thumbs'
@@ -241,7 +240,7 @@ export default function Home() {
               href='https://adplist.org/mentors/jonathan-minori'
               title='View my ADPList profile'
               target='_blank'
-              className='group no-underline'
+              className='group cursor-alias no-underline'
             >
               <div
                 id='able'
@@ -250,7 +249,7 @@ export default function Home() {
                 <BackgroundVideo videoSrc='videos/adplist.mp4' />
                 <div className='z-10 bg-gradient-to-t from-slate-900/95 from-40% to-slate-900/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
-                    ADPList
+                    Design Mentor
                   </h3>
                   <p className='readable text-base font-normal leading-snug text-white opacity-90 group-hover:opacity-100'>
                     1,000+ minutes mentoring designers on career moves.
@@ -262,7 +261,7 @@ export default function Home() {
               href='https://www.trainseasons.com'
               title='Check out Seasons'
               target='_blank'
-              className='group no-underline'
+              className='group cursor-alias no-underline'
             >
               <div
                 id='able'
@@ -305,7 +304,7 @@ export default function Home() {
               <a
                 href='mailto:jonathan.minori@gmail.com'
                 title='Email me'
-                className='contact-label group'
+                className='contact-label'
               >
                 Email
                 <ArrowUpRight
@@ -321,7 +320,7 @@ export default function Home() {
               <a
                 href='https://www.linkedin.com/in/jonathanminori/'
                 title='Connect on LinkedIn'
-                className='contact-label group'
+                className='contact-label'
               >
                 LinkedIn
                 <ArrowUpRight
@@ -336,7 +335,7 @@ export default function Home() {
               <a
                 href='https://read.cv/mino'
                 title='Read.cv'
-                className='contact-label group'
+                className='contact-label'
               >
                 Read.cv
                 <ArrowUpRight
@@ -351,7 +350,7 @@ export default function Home() {
               <a
                 href='https://x.com/jonminori'
                 title='Connect on Twitter'
-                className='contact-label group'
+                className='contact-label'
               >
                 Twitter
                 <ArrowUpRight
@@ -393,7 +392,7 @@ export default function Home() {
               Olivier Larose
             </a>
             <br />
-            Type by{' '}
+            Typeface is{' '}
             <a
               href='https://pangrampangram.com/products/neue-montreal'
               title='Neue Montreal by Pangram Pangram Foundry'

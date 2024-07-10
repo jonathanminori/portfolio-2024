@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { TextPlugin } from 'gsap/TextPlugin'
+import Sticky from '@/components/sticky'
 
 gsap.registerPlugin(TextPlugin)
 
@@ -15,13 +16,13 @@ export default function TestimonialsBadge() {
     tl.fromTo(
       badgeRef.current,
       { scale: 0 },
-      { scale: 1, delay: 0.5, duration: 1, ease: 'back.out(3)' }
+      { scale: 1, delay: 1, duration: 1, ease: 'back.out(3)' }
     )
 
     tl.fromTo(
       labelRef.current,
       { attr: { startOffset: '100%' } },
-      { attr: { startOffset: '16%' }, duration: 2.5, ease: 'back.inOut(1)' },
+      { attr: { startOffset: '12%' }, duration: 2.5, ease: 'back.inOut(1)' },
       '-=2'
     )
   }, [])
@@ -29,13 +30,13 @@ export default function TestimonialsBadge() {
     <button
       ref={badgeRef}
       data-speed='1.1'
-      className='absolute -bottom-16 right-0 aspect-square w-24 overflow-hidden rounded-full bg-[#3E1EFF] dark:bg-neutral-200'
+      className='absolute -bottom-24 right-16 aspect-square w-24 overflow-hidden rounded-full bg-[#2733C2] dark:bg-[#80D18B]'
     >
       <svg
         width='132'
         height='66'
         viewBox='0 0 132 66'
-        className='-translate-x-[52px] translate-y-[1px] overflow-visible'
+        className='-translate-x-[51px] translate-y-[0px] overflow-visible'
         fill='currentColor'
       >
         <path
@@ -47,10 +48,10 @@ export default function TestimonialsBadge() {
         <text>
           <textPath
             ref={labelRef}
-            className='select-none text-xs font-semibold uppercase tracking-tight text-[#DDEBF2] dark:text-neutral-950'
+            className='select-none text-[11px] font-semibold uppercase tracking-wider text-[#DDEBF2] dark:text-neutral-950'
             href='#t-path'
           >
-            Client Testimonials
+            Recent Work
           </textPath>
         </text>
       </svg>
