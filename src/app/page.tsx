@@ -141,7 +141,6 @@ export default function Home() {
             startChar={80}
             endChar={1200}
           />
-
           {/* <p className='text-3xl font-light leading-snug'>
             I&apos;m a hands-on leader and startup founder with two decades of
             experience driving innovation and creative excellence.
@@ -151,6 +150,32 @@ export default function Home() {
             and marketing, excelling at the intersection of brand and product
             experiences, particularly in the realm of emerging technologies.
           </p> */}
+          <div className='sm:w-180 w-full sm:-translate-x-14'>
+            <BackgroundVideo
+              videoSrc='videos/work-montage.mp4'
+              className='my-0 aspect-video rounded-lg object-cover'
+            />
+            <p className='text-center text-xs text-neutral-500'>
+              Please{' '}
+              <a
+                href='mailto:jonathan.minori@gmail.com'
+                title='Email me'
+                className='caption-link'
+              >
+                e-mail me
+              </a>{' '}
+              or{' '}
+              <a
+                href='https://x.com/jonminori'
+                target='blank'
+                title='Slide into my DMs'
+                className='caption-link'
+              >
+                slide into my DMs
+              </a>{' '}
+              for access to case studies.
+            </p>
+          </div>
         </article>
         <article
           id='currently'
@@ -206,7 +231,10 @@ export default function Home() {
                 id='able'
                 className='relative flex h-96 flex-col justify-end overflow-hidden rounded-lg bg-[#966037]'
               >
-                <BackgroundVideo videoSrc='videos/able.mp4' />
+                <BackgroundVideo
+                  videoSrc='videos/able.mp4'
+                  className='absolute inset-0 mt-0 h-full w-full object-cover'
+                />
                 <div className='z-10 bg-gradient-to-t from-[#966037]/95 from-40% to-[#966037]/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     Able
@@ -227,7 +255,10 @@ export default function Home() {
                 id='pickle-thumbs'
                 className='relative flex h-96 flex-col justify-end overflow-hidden rounded-lg bg-[#08A24B]'
               >
-                <BackgroundVideo videoSrc='videos/picklethumbs.mp4' />
+                <BackgroundVideo
+                  videoSrc='videos/picklethumbs.mp4'
+                  className='absolute inset-0 mt-0 h-full w-full object-cover'
+                />
                 <div className='z-10 bg-gradient-to-t from-[#08A24B]/95 from-20% to-[#08A24B]/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     Pickle Thumbs
@@ -248,7 +279,10 @@ export default function Home() {
                 id='able'
                 className='relative flex h-96 flex-col justify-end overflow-hidden rounded-lg bg-slate-900'
               >
-                <BackgroundVideo videoSrc='videos/adplist.mp4' />
+                <BackgroundVideo
+                  videoSrc='videos/adplist.mp4'
+                  className='absolute inset-0 mt-0 h-full w-full object-cover'
+                />
                 <div className='z-10 bg-gradient-to-t from-slate-900/95 from-40% to-slate-900/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     Mentorship
@@ -269,7 +303,10 @@ export default function Home() {
                 id='able'
                 className='relative flex h-96 flex-col justify-end overflow-hidden rounded-lg bg-slate-700'
               >
-                <BackgroundVideo videoSrc='videos/seasons.mp4' />
+                <BackgroundVideo
+                  videoSrc='videos/seasons.mp4'
+                  className='absolute inset-0 mt-0 h-full w-full object-cover'
+                />
                 <div className='z-10 bg-gradient-to-t from-slate-700/95 from-40% to-slate-700/0 px-6 pb-2 pt-12 transition-all duration-200 ease-in-out group-hover:pb-4'>
                   <h3 className='readable mb-1.5 text-lg font-normal text-white'>
                     Advising
@@ -300,7 +337,6 @@ export default function Home() {
           <h3 className='info-headline'>Connect</h3>
           <p>
             Currently available for both contract and full-time opportunities.
-            Please e-mail me or slide into my DMs for access to case studies.
           </p>
           <ul className='list-outside list-none p-0'>
             <li className='contact-list'>

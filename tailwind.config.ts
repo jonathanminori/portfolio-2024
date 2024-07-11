@@ -14,7 +14,8 @@ const config: Config = {
         '3/4': '3 / 4'
       },
       width: {
-        '168': '42rem'
+        '168': '42rem',
+        '180': '45rem'
       }
     },
     container: {

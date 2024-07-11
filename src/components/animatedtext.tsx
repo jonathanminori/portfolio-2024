@@ -46,7 +46,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
   }, [startChar, endChar])
 
   return (
-    <p ref={textRef} className='text-3xl font-light leading-snug'>
+    <p ref={textRef} className='mb-16 text-3xl font-light leading-snug'>
       {text}
     </p>
   )
