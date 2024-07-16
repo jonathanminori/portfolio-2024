@@ -54,7 +54,7 @@ html {
 }
 
 .info-headline {
-  @apply mb-4 text-sm font-medium text-[#2733C2] dark:text-[#80D18B];
+  @apply mb-4 text-sm font-medium text-[#275BC2] dark:text-[#80D18B];
 }
 
 .caption-link {

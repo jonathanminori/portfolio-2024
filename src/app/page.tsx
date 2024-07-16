@@ -179,7 +179,7 @@ export default function Home() {
         </article>
         <article
           id='currently'
-          className='relative mb-20 text-neutral-950 dark:text-neutral-200'
+          className='relative mb-24 text-neutral-950 dark:text-neutral-200'
         >
           <h3 className='info-headline'>Currently</h3>
           {/* <p>
@@ -203,7 +203,7 @@ export default function Home() {
         </article>
         <article
           id='core-skill'
-          className='group relative mb-20 w-full text-neutral-950 dark:text-neutral-200 sm:w-168'
+          className='group relative mb-24 w-full text-neutral-950 dark:text-neutral-200 sm:w-168'
         >
           <h3 className='info-headline mt-0'>Core Skills</h3>
           <ul className='relative m-0 flex list-none flex-wrap items-baseline justify-start gap-1 p-0'>
