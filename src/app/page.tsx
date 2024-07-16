@@ -17,6 +17,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
 const skillList = [
   'Creative Leadership',
   'Product Strategy',
+  'Product Management',
   'User Research',
   'Brand Strategy',
   'Creative Direction',
