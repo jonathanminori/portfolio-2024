@@ -72,6 +72,7 @@ export default function Home({
     <html lang='en'>
       <body>
         {/* <Testimonials options={testimonial_options} /> */}
+        <Analytics />
         <Header />
         {children}
       </body>
