@@ -150,7 +150,7 @@ export default function Home() {
             and marketing, excelling at the intersection of brand and product
             experiences, particularly in the realm of emerging technologies.
           </p> */}
-          <div className='sm:w-180 w-full sm:-translate-x-14'>
+          <div className='w-full sm:w-180 sm:-translate-x-14'>
             <BackgroundVideo
               videoSrc='videos/work-montage.mp4'
               className='my-0 aspect-video rounded-lg object-cover'
