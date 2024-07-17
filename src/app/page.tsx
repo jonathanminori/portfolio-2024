@@ -19,7 +19,6 @@ const skillList = [
   'Product Strategy',
   'Product Management',
   'User Research',
-  'Brand Strategy',
   'Creative Direction',
   'Art Direction',
   'Product Design',
