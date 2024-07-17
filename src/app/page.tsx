@@ -240,8 +240,8 @@ export default function Home() {
                     Able
                   </h3>
                   <p className='readable text-base font-normal leading-snug text-white opacity-90 group-hover:opacity-100'>
-                    An AI-powered camera to record and edit instructional
-                    videos.
+                    Building an AI-powered camera to record and edit
+                    instructional videos.
                   </p>
                 </div>
               </div>
