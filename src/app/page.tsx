@@ -218,8 +218,8 @@ export default function Home() {
           id='extra'
           className='mb-28 text-neutral-950 dark:text-neutral-200'
         >
-          <h3 className='info-headline !mb-5'>Extracurriculars</h3>
-          <p>A few things I&apos;m doing on the side.</p>
+          <h3 className='info-headline !mb-5'>Side Quests</h3>
+          <p>A few things I do in my off hours.</p>
           <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-1'>
             <a
               href='http://www.ableworks.co'
@@ -240,7 +240,8 @@ export default function Home() {
                     Able
                   </h3>
                   <p className='readable text-base font-normal leading-snug text-white opacity-90 group-hover:opacity-100'>
-                    AI-edited instructional videos for frontline teams.
+                    An AI-powered camera to record and edit instructional
+                    videos.
                   </p>
                 </div>
               </div>
@@ -264,7 +265,7 @@ export default function Home() {
                     Pickle Thumbs
                   </h3>
                   <p className='readable text-base font-normal leading-snug text-white opacity-90 group-hover:opacity-100'>
-                    Making things to help gardeners find their green thumb.
+                    Experiments to help gardeners find their green thumb.
                   </p>
                 </div>
               </div>
