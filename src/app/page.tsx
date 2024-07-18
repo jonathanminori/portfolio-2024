@@ -442,7 +442,7 @@ export default function Home() {
               Neue Montreal
             </a>{' '}
             by Pangram Pangram Foundry
-            <br />
+            {/* <br />
             Icons by{' '}
             <a
               href='https://lucide.dev/icons/'
@@ -451,7 +451,7 @@ export default function Home() {
               target='_blank'
             >
               Lucide
-            </a>
+            </a> */}
           </p>
         </article>
       </div>
