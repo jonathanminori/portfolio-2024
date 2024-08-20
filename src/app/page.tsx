@@ -141,15 +141,6 @@ export default function Home() {
             startChar={80}
             endChar={1200}
           />
-          {/* <p className='text-3xl font-light leading-snug'>
-            I&apos;m a hands-on leader and startup founder with two decades of
-            experience driving innovation and creative excellence.
-          </p> */}
-          {/* <p>
-            I&apos;ve held pivotal roles across design, product, engineering,
-            and marketing, excelling at the intersection of brand and product
-            experiences, particularly in the realm of emerging technologies.
-          </p> */}
           <div className='w-full sm:w-180 sm:-translate-x-14'>
             <BackgroundVideo
               videoSrc='videos/work-montage.mp4'
@@ -182,22 +173,8 @@ export default function Home() {
           className='relative mb-24 text-neutral-950 dark:text-neutral-200'
         >
           <h3 className='info-headline'>Currently</h3>
-          {/* <p>
-            In my independent practice, I serve as a fractional design leader
-            for startups and Fortune 100 companies in fintech, blockchain,
-            creative tools, and climate sectors. My expertise lies in product
-            design, strategy, and creative leadership.
-          </p>
-          <p>
-            I seek out opportunities where I can contribute to delivering
-            outstanding product experiences and cultivating a culture of
-            innovation and excellence.
-          </p> */}
           <p className='text-balance sm:text-pretty'>
-            In my independent design practice, I help organizations launch
-            products, build creative teams, and mentor designers. I seek
-            opportunities to deliver exceptional products and foster a culture
-            of innovation and excellence.
+            In my independent design practice, I help organizations think about the future, launch products, and develop creative teams. I seek opportunities to deliver exceptional products and foster a culture of innovation and excellence.
           </p>
           {/* <TestimonialsBadge /> */}
         </article>
@@ -442,16 +419,6 @@ export default function Home() {
               Neue Montreal
             </a>{' '}
             by Pangram Pangram Foundry
-            {/* <br />
-            Icons by{' '}
-            <a
-              href='https://lucide.dev/icons/'
-              title='Icons by Lucide'
-              className='colophon-link'
-              target='_blank'
-            >
-              Lucide
-            </a> */}
           </p>
         </article>
       </div>
