@@ -174,7 +174,10 @@ export default function Home() {
         >
           <h3 className='info-headline'>Currently</h3>
           <p className='text-balance sm:text-pretty'>
-            In my independent design practice, I help organizations think about the future, launch products, and develop creative teams. I seek opportunities to deliver exceptional products and foster a culture of innovation and excellence.
+            In my independent design practice, I help organizations think about
+            the future, launch products, and develop creative teams. I seek
+            opportunities to deliver exceptional products and foster a culture
+            of innovation and excellence.
           </p>
           {/* <TestimonialsBadge /> */}
         </article>
@@ -298,7 +301,7 @@ export default function Home() {
             </a>
           </div>
         </article>
-        <article
+        {/* <article
           id='recognition'
           className='mb-28 text-neutral-950 dark:text-neutral-200'
         >
@@ -307,7 +310,7 @@ export default function Home() {
             My work has won notable industry awards, including Cannes, One Show,
             Webby Awards, SXSW, and FWA.
           </p>
-        </article>
+        </article> */}
         <article
           id='contact'
           className='mb-28 text-neutral-950 dark:text-neutral-200'
