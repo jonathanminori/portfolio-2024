@@ -1,0 +1,359 @@
+/* ==========================================
+   CUSTOM FONTS
+   ========================================== */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue-01.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue-Light-08.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue-Bold-02.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue-Italic-03.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue-BoldItalic-04.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue-LightItalic-09.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue-Medium-11.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue-MediumItalic-12.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue-Thin-13.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue-ThinItalic-14.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue-UltraLight-06.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue-UltraLightItalic-07.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue-CondensedBold-05.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: condensed;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue-CondensedBlack-10.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: condensed;
+}
+
+/* ==========================================
+   BASE STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-weight: 300;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+    color: #fff;
+    cursor: none;
+    --cursor-x: 0px;
+    --cursor-y: 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.40);
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+
+#preloader.loaded {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.preloader-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preloader-circle {
+    display: block;
+}
+
+.preloader-circle-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.6);
+    stroke-width: 1.5;
+    stroke-dasharray: 1, 3;
+}
+
+.preloader-circle-progress {
+    fill: none;
+    stroke: rgba(255, 255, 255, 1);
+    stroke-width: 1.5;
+    stroke-dasharray: 50.265;
+    stroke-dashoffset: 50.265;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+.preloader-percent {
+    display: none;
+}
+
+/* Grid Canvas Background */
+#grid-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Name - Upper Left */
+.center-name {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    transform: none;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    z-index: 100;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 1);
+    white-space: nowrap;
+}
+
+/* Corner Labels */
+.corner-label {
+    position: fixed;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    z-index: 101;
+    color: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    clip-path: inset(0 100% 0 0);
+    /* Start hidden, reveal left to right */
+}
+
+/* Fun - Left edge, vertically centered, rotated */
+.corner-top-left {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    clip-path: inset(0 100% 0 0);
+    /* Mask follows rotation */
+}
+
+/* Serious - Right edge, vertically centered, rotated */
+.corner-top-right {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center center;
+    clip-path: inset(0 100% 0 0);
+    /* Mask follows rotation */
+}
+
+/* Useless - Bottom edge, horizontally centered */
+.corner-bottom-left {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: inset(0 100% 0 0);
+}
+
+/* Valuable - Top edge, horizontally centered */
+.corner-bottom-right {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: inset(0 100% 0 0);
+}
+
+/* Image Container */
+#image-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Spawned Images */
+.spawned-image {
+    position: absolute;
+    width: 420px;
+    height: auto;
+    pointer-events: none;
+    transform-origin: center;
+    will-change: transform, opacity;
+    z-index: 1;
+    /* box-shadow:
+        0 6px 6.5px rgba(0, 0, 0, 0.13),
+        0 23px 11.5px rgba(0, 0, 0, 0.11),
+        0 52px 15.5px rgba(0, 0, 0, 0.07),
+        0 92px 18.5px rgba(0, 0, 0, 0.02),
+        0 145px 20px rgba(0, 0, 0, 0); */
+}
+
+/* Custom Cursor - White 6x6 dot */
+body::after {
+    content: '';
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    left: var(--cursor-x);
+    top: var(--cursor-y);
+    transform: translate(-50%, -50%);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .corner-label {
+        font-size: 0.75rem;
+    }
+
+    .corner-top-left,
+    .corner-top-right {
+        top: 1rem;
+    }
+
+    .corner-top-left,
+    .corner-bottom-left {
+        left: 1rem;
+    }
+
+    .corner-bottom-left,
+    .corner-bottom-right {
+        bottom: 1rem;
+    }
+
+    .corner-top-right,
+    .corner-bottom-right {
+        right: 1rem;
+    }
+
+    .spawned-image {
+        width: min(30vw, 200px);
+    }
+}
+
+/* GUI Toggle Button */
+#gui-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 11px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.025s ease;
+}
+
+#gui-toggle:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: scale(1.02);
+}
+
+#gui-toggle:active {
+    transform: scale(0.98);
+}
