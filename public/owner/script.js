@@ -15,7 +15,7 @@ function preloadImages() {
     Object.keys(imageConfig).forEach(quadrant => {
       const folderName = folderMap[quadrant];
       imageConfig[quadrant].forEach(imageName => {
-        allImages.push(`public/owner/images/${folderName}/${imageName}`);
+        allImages.push(`owner/images/${folderName}/${imageName}`);
       });
     });
     
