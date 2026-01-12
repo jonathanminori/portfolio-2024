@@ -2,7 +2,7 @@ import Script from 'next/script';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Jonathan Minori - Portfolio',
+  title: 'For Owner',
 };
 
 export default function OwnerPage() {
