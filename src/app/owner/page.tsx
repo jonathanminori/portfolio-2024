@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function OwnerPage() {
   return (
     <>
-      {/* Load CSS */}
+      {/* eslint-disable-next-line @next/next/no-css-tags */}
       <link rel="stylesheet" href="/owner/style.css" />
 
       {/* Preloader */}

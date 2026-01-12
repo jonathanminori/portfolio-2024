@@ -62,6 +62,7 @@ const SkillList: React.FC = () => {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
