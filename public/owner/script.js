@@ -3,21 +3,8 @@
 // ==========================================
 function preloadImages() {
   return new Promise((resolve) => {
-    // Collect all image paths from imageConfig
-    const allImages = [];
-    const folderMap = {
-      upperLeft: 'upper-left',
-      upperRight: 'upper-right',
-      bottomLeft: 'bottom-left',
-      bottomRight: 'bottom-right'
-    };
-    
-    Object.keys(imageConfig).forEach(quadrant => {
-      const folderName = folderMap[quadrant];
-      imageConfig[quadrant].forEach(imageName => {
-        allImages.push(`/owner/images/${folderName}/${imageName}`);
-      });
-    });
+    // imageConfig is now a flat array of full paths
+    const allImages = imageConfig;
     
     console.log(`Preloading ${allImages.length} images...`);
     
@@ -116,64 +103,83 @@ let GRID_EASING_STYLE = 'varied';   // Choose: 'elastic', 'anticipation', or 'va
                                      // varied: Each dot has random bounce intensity (organic)
 
 // ==========================================
-// TEXT REVEAL SETTINGS (Easy to Adjust!)
-// ==========================================
-let TEXT_REVEAL_DURATION = 0.7;     // Duration for each label reveal in seconds
-let TEXT_REVEAL_STAGGER = 0.3;      // Delay between each label in seconds (creates overlap)
-
-// ==========================================
 // IMAGE CONFIGURATION (Auto-generated)
 // ==========================================
 // Images are automatically sorted alphabetically
 // To reorder: rename files (e.g., 001-image.jpg, 002-image.jpg)
 // To regenerate: Say "update images" or "scan images"
-const imageConfig = {
-  upperLeft: [
-    'ul1.jpg',
-    'ul2.jpg',
-    'ul3.jpg'
-  ],
-  upperRight: [
-    'ur1.jpg',
-    'ur2.jpg',
-    'ur3.jpg'
-  ],
-  bottomLeft: [
-    '1S6A3228.jpeg',
-    '5_GalleryImages_2.jpg',
-    'BTS-1.jpg',
-    'BTS-10.jpg',
-    'BTS-12.jpg',
-    'BTS-13.jpg',
-    'BTS-15.jpg',
-    'BTS-23.jpg',
-    'BTS-4.jpg',
-    'door.jpg',
-    'gameplay-4.jpg',
-    'gameplay-6.jpg',
-    'gameplay-7.jpg',
-    'gameplay-8.jpg',
-    'gameplay-9.jpg',
-    'Music-box.jpg',
-    'Relequary.jpg',
-    'room-2.jpg'
-  ],
-  bottomRight: [
-    'br1.jpg',
-    'br2.jpg',
-    'br3.jpg',
-    'br4.jpg'
-  ]
-};
+const imageConfig = [
+  'images/upper-left/nike-livedesigngif.gif',
+  'images/upper-left/nike-me-screen-01.jpg',
+  'images/upper-left/nike-me-screen-03.jpg',
+  'images/upper-left/nike-me-screen-05.jpg',
+  'images/upper-left/nike-me-screen-06.jpg',
+  'images/upper-left/nike-me-screen-07.jpg',
+  'images/upper-left/nike-me-screen-08.jpg',
+  'images/upper-left/nike-me-screen-09.jpg',
+  'images/upper-left/nike-deepstory.gif',
+  'images/upper-left/nike-live.gif',
+
+  'images/upper-left/lego-1.png',
+  'images/upper-left/lego-2.png',
+  'images/upper-left/lego-4.png',
+  'images/upper-left/lego-3.png',
+  'images/upper-right/able-guide-mobile.png',
+  'images/upper-right/able-guide-tablet.png',
+  'images/upper-right/caravel-dash.png',
+  'images/upper-right/bridge-logo.png',
+  'images/upper-right/bridge-mobile-1.png',
+  'images/upper-right/bridge-mobile-2.png',
+  'images/upper-right/bridge-tether.png',
+  'images/upper-left/picklethumb.png',
+  'images/upper-right/heron-dash.png',
+  'images/upper-right/vehicle-detail-1.png',
+  'images/upper-right/vehicle-detail-2.png',
+  'images/bottom-left/1S6A3228.jpeg',
+  'images/bottom-left/5_GalleryImages_1.jpg',
+  'images/bottom-left/5_GalleryImages_2.jpg',
+  'images/bottom-left/5_GalleryImages_4.jpg',
+  'images/bottom-left/break-room.jpg',
+  'images/bottom-left/Music-box.jpg',
+  'images/bottom-left/Relequary.jpg',
+  'images/bottom-left/room-2.jpg',
+  'images/bottom-left/door.jpg',
+  'images/bottom-left/clocks.jpg',
+  'images/bottom-left/gameplay-4.jpg',
+  'images/bottom-left/gameplay-6.jpg',
+  'images/bottom-left/gameplay-7.jpg',
+  'images/bottom-left/gameplay-8.jpg',
+  'images/bottom-left/gameplay-9.jpg',
+  'images/bottom-left/BTS-1.jpg',
+  'images/bottom-left/BTS-10.jpg',
+  'images/bottom-left/BTS-12.jpg',
+  'images/bottom-left/BTS-13.jpg',
+  'images/bottom-left/BTS-15.jpg',
+  'images/bottom-left/BTS-23.jpg',
+  'images/bottom-left/cubequest85@2x.png',
+  'images/bottom-left/theend@2x.png',
+  'images/bottom-left/fwa-desktop.png',
+  'images/bottom-left/maxal-1.jpg',
+  'images/bottom-left/maxal-2.jpg',
+  'images/bottom-left/maxal-3.gif',
+  'images/bottom-left/maxal-4.gif',
+  'images/bottom-left/maxal-5.gif',
+];
 
 // ==========================================
 // SETTINGS (Easy to Adjust!)
 // ==========================================
 let MAX_IMAGES = 20;                // Maximum images on screen at once
-let IMAGE_SPAWN_RATE = 300;         // Milliseconds between each image spawn
+let IMAGE_SPAWN_RATE = 200;         // Milliseconds between each image spawn
                                     // LOWER = more images (e.g., 100 = faster)
                                     // HIGHER = fewer images (e.g., 300 = slower)
-let IMAGE_MAX_WIDTH = 720;          // Maximum image width in pixels
+let IMAGE_MAX_WIDTH = 540;          // Maximum image width in pixels
+let IMAGE_MAX_HEIGHT = 540;         // Maximum image height in pixels
+let IMAGE_POP_ENABLED = true;       // Enable/disable pop animation
+let IMAGE_POP_DURATION = 0.18;      // Total animation duration in seconds
+let IMAGE_POP_SCALE_START = 1.05;   // Initial scale (overshoot)
+let IMAGE_POP_SCALE_DIP = 0.96;     // Dip scale (undershoot)
+let IMAGE_POP_SCALE_END = 1;        // Final scale (normal)
 
 // ==========================================
 // CORE VARIABLES
@@ -183,18 +189,12 @@ let currentGridSize = 10;           // Will be calculated based on window width
 let canSpawnImages = false;         // Enable after grid animation completes
 
 let imageQueue = [];
-let currentIndices = {
-  upperLeft: 0,
-  upperRight: 0,
-  bottomLeft: 0,
-  bottomRight: 0
-};
+let currentIndex = 0;               // Single index for all images
 
 let isMouseMoving = false;
 let lastSpawnTime = 0;
 let mouseX = 0;
 let mouseY = 0;
-let currentQuadrant = null;
 
 // ==========================================
 // HELPER FUNCTIONS
@@ -217,46 +217,16 @@ function snapToGrid(x, y, gridSize) {
 }
 
 // ==========================================
-// QUADRANT DETECTION
-// ==========================================
-function getQuadrant(x, y) {
-  const centerX = window.innerWidth / 2;
-  const centerY = window.innerHeight / 2;
-  
-  if (x < centerX && y < centerY) {
-    return 'upperLeft';
-  } else if (x >= centerX && y < centerY) {
-    return 'upperRight';
-  } else if (x < centerX && y >= centerY) {
-    return 'bottomLeft';
-  } else {
-    return 'bottomRight';
-  }
-}
-
-// ==========================================
 // IMAGE SPAWNING (Grid-Snapped)
 // ==========================================
-function spawnImage(x, y, quadrant) {
-  const images = imageConfig[quadrant];
-  if (!images || images.length === 0) return;
+function spawnImage(x, y) {
+  if (!imageConfig || imageConfig.length === 0) return;
   
   // Get next image in sequence
-  const imageIndex = currentIndices[quadrant];
-  const imageName = images[imageIndex];
+  const imagePath = imageConfig[currentIndex];
   
   // Update index for next spawn (cycle through array)
-  currentIndices[quadrant] = (imageIndex + 1) % images.length;
-  
-  // Get folder name from quadrant
-  const folderMap = {
-    upperLeft: 'upper-left',
-    upperRight: 'upper-right',
-    bottomLeft: 'bottom-left',
-    bottomRight: 'bottom-right'
-  };
-  
-  const imagePath = `images/${folderMap[quadrant]}/${imageName}`;
+  currentIndex = (currentIndex + 1) % imageConfig.length;
   
   // Create image element
   const img = document.createElement('img');
@@ -270,9 +240,53 @@ function spawnImage(x, y, quadrant) {
   img.style.left = `${snappedPos.x}px`;
   img.style.top = `${snappedPos.y}px`;
   img.style.transform = `translate(-50%, -50%)`;
-  img.style.opacity = '1';
-  img.style.width = `${IMAGE_MAX_WIDTH}px`;
-  img.style.height = 'auto'; // Maintain aspect ratio
+  img.style.opacity = '0'; // Hide until sized
+  
+  // Handle 2x resolution: calculate dimensions when image loads
+  img.onload = function() {
+    // Get natural dimensions (2x resolution)
+    let displayWidth = this.naturalWidth / 2;
+    let displayHeight = this.naturalHeight / 2;
+    
+    // Apply max width constraint while maintaining aspect ratio
+    if (displayWidth > IMAGE_MAX_WIDTH) {
+      const ratio = IMAGE_MAX_WIDTH / displayWidth;
+      displayWidth = IMAGE_MAX_WIDTH;
+      displayHeight = displayHeight * ratio;
+    }
+    
+    // Apply max height constraint while maintaining aspect ratio
+    if (displayHeight > IMAGE_MAX_HEIGHT) {
+      const ratio = IMAGE_MAX_HEIGHT / displayHeight;
+      displayHeight = IMAGE_MAX_HEIGHT;
+      displayWidth = displayWidth * ratio;
+    }
+    
+    // Set final dimensions
+    this.style.width = `${displayWidth}px`;
+    this.style.height = `${displayHeight}px`;
+    
+    // Show image now that it's properly sized
+    this.style.opacity = '1';
+    
+    // Apply pop animation if enabled
+    if (IMAGE_POP_ENABLED) {
+      Motion.animate(
+        this,
+        {
+          transform: [
+            `translate(-50%, -50%) scale(${IMAGE_POP_SCALE_START})`,
+            `translate(-50%, -50%) scale(${IMAGE_POP_SCALE_DIP})`,
+            `translate(-50%, -50%) scale(${IMAGE_POP_SCALE_END})`
+          ]
+        },
+        {
+          duration: IMAGE_POP_DURATION,
+          easing: 'ease-out'
+        }
+      );
+    }
+  };
   
   // Add to container
   imageContainer.appendChild(img);
@@ -297,7 +311,6 @@ let mouseMoveTimeout;
 document.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
-  currentQuadrant = getQuadrant(mouseX, mouseY);
   
   isMouseMoving = true;
   
@@ -327,10 +340,8 @@ function spawnLoop() {
   
   // Only spawn images after grid animation is complete
   if (canSpawnImages && isMouseMoving && (now - lastSpawnTime >= IMAGE_SPAWN_RATE)) {
-    if (currentQuadrant) {
-      spawnImage(mouseX, mouseY, currentQuadrant);
-      lastSpawnTime = now;
-    }
+    spawnImage(mouseX, mouseY);
+    lastSpawnTime = now;
   }
   
   requestAnimationFrame(spawnLoop);
@@ -340,54 +351,6 @@ function spawnLoop() {
 // INITIALIZATION
 // ==========================================
 // Note: spawnLoop() is now called after preloading completes
-
-// ==========================================
-// TEXT REVEAL ANIMATION
-// ==========================================
-function animateTextReveal() {
-  const valuable = document.querySelector('.corner-bottom-right'); // Top
-  const serious = document.querySelector('.corner-top-right');     // Right
-  const useless = document.querySelector('.corner-bottom-left');   // Bottom
-  const fun = document.querySelector('.corner-top-left');          // Left
-  
-  // Use settings from top of file
-  const duration = TEXT_REVEAL_DURATION;
-  const stagger = TEXT_REVEAL_STAGGER;
-  
-  // Valuable (Top) - Start immediately
-  Motion.animate(
-    valuable,
-    { clipPath: ['inset(0 100% 0 0)', 'inset(0 0% 0 0)'] },
-    { duration: duration, easing: [0.16, 1, 0.3, 1] }
-  );
-  
-  // Serious (Right, rotated) - Start after delay
-  setTimeout(() => {
-    Motion.animate(
-      serious,
-      { clipPath: ['inset(0 100% 0 0)', 'inset(0 0% 0 0)'] },
-      { duration: duration, easing: [0.16, 1, 0.3, 1] }
-    );
-  }, stagger * 1000);
-  
-  // Useless (Bottom) - Start after 2nd delay
-  setTimeout(() => {
-    Motion.animate(
-      useless,
-      { clipPath: ['inset(0 100% 0 0)', 'inset(0 0% 0 0)'] },
-      { duration: duration, easing: [0.16, 1, 0.3, 1] }
-    );
-  }, stagger * 2 * 1000);
-  
-  // Fun (Left, rotated) - Start after 3rd delay
-  setTimeout(() => {
-    Motion.animate(
-      fun,
-      { clipPath: ['inset(0 100% 0 0)', 'inset(0 0% 0 0)'] },
-      { duration: duration, easing: [0.16, 1, 0.3, 1] }
-    );
-  }, stagger * 3 * 1000);
-}
 
 // ==========================================
 // GRID BACKGROUND ANIMATION
@@ -443,9 +406,6 @@ function initializeGrid() {
   
   // Find max distance for normalization
   const maxDistance = Math.sqrt(centerX * centerX + centerY * centerY);
-  
-  // Start text reveal animations in sequence
-  animateTextReveal();
   
   // Animate dots with ripple effect
   const startTime = Date.now();
@@ -664,11 +624,14 @@ const settings = {
   gridGlow: GRID_GLOW_INTENSITY,
   gridPush: GRID_PUSH_DISTANCE,
   gridEasing: GRID_EASING_STYLE,
-  textDuration: TEXT_REVEAL_DURATION,
-  textStagger: TEXT_REVEAL_STAGGER,
   maxImages: MAX_IMAGES,
   spawnRate: IMAGE_SPAWN_RATE,
-  maxWidth: IMAGE_MAX_WIDTH
+  maxWidth: IMAGE_MAX_WIDTH,
+  maxHeight: IMAGE_MAX_HEIGHT,
+  popEnabled: IMAGE_POP_ENABLED,
+  popDuration: IMAGE_POP_DURATION,
+  popScaleStart: IMAGE_POP_SCALE_START,
+  popScaleDip: IMAGE_POP_SCALE_DIP
 };
 
 // Load settings from URL on init
@@ -680,11 +643,14 @@ function loadFromURL() {
   if (params.has('gridGlow')) settings.gridGlow = parseFloat(params.get('gridGlow'));
   if (params.has('gridPush')) settings.gridPush = parseFloat(params.get('gridPush'));
   if (params.has('gridEasing')) settings.gridEasing = params.get('gridEasing');
-  if (params.has('textDuration')) settings.textDuration = parseFloat(params.get('textDuration'));
-  if (params.has('textStagger')) settings.textStagger = parseFloat(params.get('textStagger'));
   if (params.has('maxImages')) settings.maxImages = parseInt(params.get('maxImages'));
   if (params.has('spawnRate')) settings.spawnRate = parseInt(params.get('spawnRate'));
   if (params.has('maxWidth')) settings.maxWidth = parseInt(params.get('maxWidth'));
+  if (params.has('maxHeight')) settings.maxHeight = parseInt(params.get('maxHeight'));
+  if (params.has('popEnabled')) settings.popEnabled = params.get('popEnabled') === 'true';
+  if (params.has('popDuration')) settings.popDuration = parseFloat(params.get('popDuration'));
+  if (params.has('popScaleStart')) settings.popScaleStart = parseFloat(params.get('popScaleStart'));
+  if (params.has('popScaleDip')) settings.popScaleDip = parseFloat(params.get('popScaleDip'));
 }
 
 // Update URL with current settings
@@ -696,11 +662,14 @@ function updateURL() {
   params.set('gridGlow', settings.gridGlow);
   params.set('gridPush', settings.gridPush);
   params.set('gridEasing', settings.gridEasing);
-  params.set('textDuration', settings.textDuration);
-  params.set('textStagger', settings.textStagger);
   params.set('maxImages', settings.maxImages);
   params.set('spawnRate', settings.spawnRate);
   params.set('maxWidth', settings.maxWidth);
+  params.set('maxHeight', settings.maxHeight);
+  params.set('popEnabled', settings.popEnabled);
+  params.set('popDuration', settings.popDuration);
+  params.set('popScaleStart', settings.popScaleStart);
+  params.set('popScaleDip', settings.popScaleDip);
   
   const newURL = window.location.pathname + '?' + params.toString();
   window.history.replaceState({}, '', newURL);
@@ -715,11 +684,14 @@ GRID_ANIMATION_SPEED = settings.gridSpeed;
 GRID_GLOW_INTENSITY = settings.gridGlow;
 GRID_PUSH_DISTANCE = settings.gridPush;
 GRID_EASING_STYLE = settings.gridEasing;
-TEXT_REVEAL_DURATION = settings.textDuration;
-TEXT_REVEAL_STAGGER = settings.textStagger;
 MAX_IMAGES = settings.maxImages;
 IMAGE_SPAWN_RATE = settings.spawnRate;
 IMAGE_MAX_WIDTH = settings.maxWidth;
+IMAGE_MAX_HEIGHT = settings.maxHeight;
+IMAGE_POP_ENABLED = settings.popEnabled;
+IMAGE_POP_DURATION = settings.popDuration;
+IMAGE_POP_SCALE_START = settings.popScaleStart;
+IMAGE_POP_SCALE_DIP = settings.popScaleDip;
 
 // Grid Settings Folder
 const gridFolder = gui.addFolder('Grid');
@@ -754,21 +726,6 @@ gridFolder.add(settings, 'gridEasing', ['elastic', 'anticipation', 'varied'])
     updateURL();
   });
 
-// Text Reveal Settings Folder
-const textFolder = gui.addFolder('Text Reveal');
-textFolder.add(settings, 'textDuration', 0.3, 2.0, 0.1)
-  .name('Duration (s)')
-  .onChange(value => {
-    TEXT_REVEAL_DURATION = value;
-    updateURL();
-  });
-textFolder.add(settings, 'textStagger', 0.1, 1.0, 0.1)
-  .name('Stagger (s)')
-  .onChange(value => {
-    TEXT_REVEAL_STAGGER = value;
-    updateURL();
-  });
-
 // Image Settings Folder
 const imageFolder = gui.addFolder('Images');
 imageFolder.add(settings, 'maxImages', 5, 50, 1)
@@ -783,10 +740,40 @@ imageFolder.add(settings, 'spawnRate', 50, 500, 10)
     IMAGE_SPAWN_RATE = value;
     updateURL();
   });
-imageFolder.add(settings, 'maxWidth', 200, 600, 20)
+imageFolder.add(settings, 'maxWidth', 200, 1000, 20)
   .name('Max Width (px)')
   .onChange(value => {
     IMAGE_MAX_WIDTH = value;
+    updateURL();
+  });
+imageFolder.add(settings, 'maxHeight', 200, 1000, 20)
+  .name('Max Height (px)')
+  .onChange(value => {
+    IMAGE_MAX_HEIGHT = value;
+    updateURL();
+  });
+imageFolder.add(settings, 'popEnabled')
+  .name('Pop Animation')
+  .onChange(value => {
+    IMAGE_POP_ENABLED = value;
+    updateURL();
+  });
+imageFolder.add(settings, 'popDuration', 0.05, 0.5, 0.05)
+  .name('Pop Duration (s)')
+  .onChange(value => {
+    IMAGE_POP_DURATION = value;
+    updateURL();
+  });
+imageFolder.add(settings, 'popScaleStart', 1.0, 1.2, 0.01)
+  .name('Pop Scale Start')
+  .onChange(value => {
+    IMAGE_POP_SCALE_START = value;
+    updateURL();
+  });
+imageFolder.add(settings, 'popScaleDip', 0.9, 1.0, 0.01)
+  .name('Pop Scale Dip')
+  .onChange(value => {
+    IMAGE_POP_SCALE_DIP = value;
     updateURL();
   });
 

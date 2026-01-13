@@ -190,70 +190,6 @@ body {
     pointer-events: none;
 }
 
-/* Name - Upper Left */
-.center-name {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    transform: none;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    z-index: 100;
-    pointer-events: none;
-    color: rgba(255, 255, 255, 1);
-    white-space: nowrap;
-}
-
-/* Corner Labels */
-.corner-label {
-    position: fixed;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    z-index: 101;
-    color: rgba(255, 255, 255, 0.8);
-    pointer-events: none;
-    clip-path: inset(0 100% 0 0);
-    /* Start hidden, reveal left to right */
-}
-
-/* Fun - Left edge, vertically centered, rotated */
-.corner-top-left {
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%) rotate(-90deg);
-    clip-path: inset(0 100% 0 0);
-    /* Mask follows rotation */
-}
-
-/* Serious - Right edge, vertically centered, rotated */
-.corner-top-right {
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%) rotate(90deg);
-    transform-origin: center center;
-    clip-path: inset(0 100% 0 0);
-    /* Mask follows rotation */
-}
-
-/* Useless - Bottom edge, horizontally centered */
-.corner-bottom-left {
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    clip-path: inset(0 100% 0 0);
-}
-
-/* Valuable - Top edge, horizontally centered */
-.corner-bottom-right {
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    clip-path: inset(0 100% 0 0);
-}
-
 /* Image Container */
 #image-container {
     position: fixed;
@@ -299,30 +235,6 @@ body::after {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .corner-label {
-        font-size: 0.75rem;
-    }
-
-    .corner-top-left,
-    .corner-top-right {
-        top: 1rem;
-    }
-
-    .corner-top-left,
-    .corner-bottom-left {
-        left: 1rem;
-    }
-
-    .corner-bottom-left,
-    .corner-bottom-right {
-        bottom: 1rem;
-    }
-
-    .corner-top-right,
-    .corner-bottom-right {
-        right: 1rem;
-    }
-
     .spawned-image {
         width: min(30vw, 200px);
     }
